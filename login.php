@@ -1,5 +1,25 @@
-
+<?php session_start(); ?>
+<?php require 'db-conect.php'; ?>>
     
+<?php 
+  if($_SERVER["REQUEST_METHOD"]=='POST'){
+    $pdo=new PDO($connect,USER,PASS);
+    $sql=-$pdo->prepure('select * from customer where address=?');
+    $sql->execute([$_POST['login']]);
+    foreach($sql as $row){
+      if(password_verify($_POST['password'],$row['password'])== true){
+      $_SESSION['movie']=[
+          'client_id'=>$row['id'],'name'=>$row['name'],
+          'password'=>$row['password'],'address'=>$row['address'],
+          'phone'=>$row['phone'],'birthday'=>$row['birthday'],'genre'=>$row['genre']
+          ];
+          header('Location: search.php');
+          exit;
+      }
+  }
+  $message='ログイン名パスワードが違います。';
+  }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,14 +31,18 @@
     <title>ログイン画面</title>
 </head>
 <body>
- <div class="wrap">
+  <div class="wrap">
    
     <div class="img">
     <img src="img/rogo.jpg" alt="rogo" title="rogo"></div>
-
-   <form action='search.php' method="post">  
+<?php 
+if(isset($message)){
+  echo $error;
+}
+?>
+   <form action='login.php' method="post">  
    <div class="name1">
-   メールアドレス<br>または<br>電話番号</div>
+   メールアドレス<br></div>
 
    <div class="name2">
   <input type="text" name="login"><br></div>
