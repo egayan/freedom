@@ -1,0 +1,203 @@
+.red{
+    font-size: 15px;  
+    color: #f32121;     /* 文字色指定 */
+}
+
+.wrap {
+    height: 100px;
+    width: 500px;
+}
+
+
+.namae{/*名前*/
+    position: relative; /* 今の位置を基準 */
+    /* 上から10px */
+    left: 300px; /* 左から20px */
+    /*font-size: 40px;  フォントサイズ調整*/
+}
+.name{/*名前text*/
+    position: relative; /* 今の位置を基準 */
+    /* 上から10px */
+    left: 300px; /* 左から20px */
+    line-height: 1.5;
+     width: 100%;
+}
+
+
+.me-riadoresu{/* メールアドレス */
+    position: relative; /* 今の位置を基準 */
+    top: 30px; /* 上から10px */
+    left: 300px; /* 左から20px */
+    /*font-size: 40px;  フォントサイズ調整*/
+}
+.address{/* メールアドレス email */
+    position: relative; /* 今の位置を基準 */
+    top: 30px; /* 上から10px */
+    left: 300px; /* 左から20px */
+    line-height: 1.5;
+     width: 100%;
+}
+
+
+.denwabangou{/* 電話番号 */
+    position: relative; /* 今の位置を基準 */
+    top: 55px; /* 上から10px */
+    left: 300px; /* 左から20px */
+    /*font-size: 40px;  フォントサイズ調整*/
+}
+.phone{/* 電話番号 tel*/
+    position: relative; /* 今の位置を基準 */
+    top: 55px; /* 上から10px */
+    left: 300px; /* 左から20px */
+    line-height: 1.5;
+    width: 100%;
+}
+
+.pasuwa-do{/* パスワード */
+    position: relative; /* 今の位置を基準 */
+    top: 85px; /* 上から10px */
+    left: 300px; /* 左から20px */
+    /*font-size: 40px;  フォントサイズ調整*/
+}
+.password{/* パスワード password*/
+    position: relative; /* 今の位置を基準 */
+    top: 85px; /* 上から10px */
+    left: 300px; /* 左から20px */
+    line-height: 1.5;
+    width: 100%;
+}
+
+
+.seinegappi{/*生年月日 */
+    position: relative; /* 今の位置を基準 */
+    top: 115px; /* 上から10px */
+    left: 300px; /* 左から20px */
+    /*font-size: 40px;  フォントサイズ調整*/
+}
+.birthday{/* 生年月日 birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: 110px; /* 上から10px */
+    left: 300px; /* 左から20px */
+    line-height: 1.5;
+    width: 100%;
+}
+
+
+.ganru{/*生年月日 */
+    position: relative; /* 今の位置を基準 */
+    top: 150px; /* 上から10px */
+    left: 300px; /* 左から20px */
+    /*font-size: 40px;  フォントサイズ調整*/
+}
+.zyanru{/* 生年月日 birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: 55px; /* 上から10px */
+    left: 200px; /* 左から20px */
+    line-height: 1.5;
+    width: 100%;
+}
+.kategori{/* ジャンル birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: 150px; /* 上から10px */
+    left: 300px; /* 左から20px */
+}
+
+.zyanru6{/* ジャンル birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -140px; /* 上から10px */
+    left: 200px; /* 左から20px */
+   
+}
+.zyanru7{/* ジャンル birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -140px; /* 上から10px */
+    left: 200px; /* 左から20px */
+}
+.zyanru8{/* ジャンル birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -140px; /* 上から10px */
+    left: 200px; /* 左から20px */
+   
+}
+.zyanru9{/* ジャンル birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -140px; /* 上から10px */
+    left: 200px; /* 左から20px */
+   
+}
+.zyanru10{/* ジャンル birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -140px; /* 上から10px */
+    left: 200px; /* 左から20px */
+   
+}
+.zyanru11{/* ジャンル birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -140px; /* 上から10px */
+    left: 200px; /* 左から20px */
+   
+}
+.zyanru12{/* ジャンル birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -140px; /* 上から10px */
+   
+   
+}
+.zyanru13{/* ジャンル birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -160px; /* 上から10px */
+    left: 200px; /* 左から20px */
+   
+}
+.zyanru14{/* ジャンル birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -160px; /* 上から10px */
+    
+}
+
+.error1{/* エラー文 birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -620px; /* 上から10px */
+    left: 675px; /* 左から20px */
+}
+.error2{/* エラー文 birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -580px; /* 上から10px */
+    left: 600px; /* 左から20px */
+}
+.error3{/* エラー文 birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -540px; /* 上から10px */
+    left: 645px; /* 左から20px */
+}
+.error4{/* エラー文 birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -500px; /* 上から10px */
+    left: 625px; /* 左から20px */
+}
+.error5{/* エラー文 birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -460px; /* 上から10px */
+    left: 640px; /* 左から20px */
+}
+.error6{/* エラー文 birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -260px; /* 上から10px */
+    left: 500px; /* 左から20px */
+}
+.error7{/* エラー文 birthday*/
+    position: relative; /* 今の位置を基準 */
+    top: -260px; /* 上から10px */
+    left: 500px; /* 左から20px */
+}
+
+.sousinn{
+    position: relative; /* 今の位置を基準 */
+    top: 60px; /* 上から10px */
+    left: 500px; /* 左から20px */
+}
+.rog{
+    position: relative; /* 今の位置を基準 */
+    top: -100px; /* 上から10px */
+    left: 700px; /* 左から20px */
+}
