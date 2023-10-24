@@ -1,0 +1,64 @@
+img{
+    width: 160px;
+    height: 160px;
+}
+
+.wrap {
+    height: 100px;
+    width: 500px;
+
+}
+.name1{
+    position: relative; /* 今の位置を基準 */
+    top: 30px; /* 上から10px */
+    left: 200px; /* 左から20px */
+    font-size:  40px; /* フォントサイズ調整*/
+}
+
+.kensaku{
+    position: relative; /* 今の位置を基準 */
+    top: 40px; /* 上から10px */
+    left: 200px; /* 左から20px */
+     line-height: 1.5;
+     width: 100%;
+}
+
+.osusume {
+    position: relative; /* 今の位置を基準 */
+    top: 160px; /* 上から10px */
+    left: 410px; /* 左から20px */
+    font-size:  40px; /* フォントサイズ調整*/
+}
+
+.gazou1{
+    position: relative; /* 今の位置を基準 */
+    top: 195px; /* 上から10px */
+    left: 100px; /* 左から20px */
+}
+
+.gazou2{
+    position: relative; /* 今の位置を基準 */
+    top: 30px; /* 上から10px */
+    left: 300px; /* 左から20px */
+}
+
+.gazou3{
+    position: relative; /* 今の位置を基準 */
+    top: -135px; /* 上から10px */
+    left: 500px; /* 左から20px */
+}
+
+.gazou4{
+    position: relative; /* 今の位置を基準 */
+    top: -300px; /* 上から10px */
+    left: 700px; /* 左から20px */
+}
+
+.gazou5{
+    position: relative; /* 今の位置を基準 */
+    top: -465px; /* 上から10px */
+    left: 900px; /* 左から20px */
+}
+
+/*  ↓ nenu.php のCSS */
+
