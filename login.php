@@ -42,7 +42,7 @@ if(isset($message)){
 ?>
    <form action='login.php' method="post">  
    <div class="name1">
-   メールアドレス<br></div>
+   メールアドレスaaaa<br></div>
 
    <div class="name2">
   <input type="text" name="login"><br></div>
