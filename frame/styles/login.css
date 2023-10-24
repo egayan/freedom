@@ -1,0 +1,43 @@
+img{
+    width: 160px;
+    height: 160px;
+}
+
+ .name1{
+    position: relative; /* 今の位置を基準 */
+    top: 30px; /* 上から10px */
+    left: 150px; /* 左から20px */
+    }
+
+.name2{
+     position: relative; /* 今の位置を基準 */
+     top: -16px; /* 上から10px */
+     left: 350px; /* 左から20px */
+    }
+
+.pasu1{
+    position: relative; /* 今の位置を基準 */
+     top: 30px; /* 上から10px */
+    left: 150px; /* 左から20px */
+    }
+
+.pass2{
+    position: relative; /* 今の位置を基準 */
+     top: 10px; /* 上から10px */
+    left: 350px; /* 左から20px */
+    }
+
+
+.rogu{
+    position: relative; /* 今の位置を基準 */
+     top: 70px; /* 上から10px */
+    left: 250px; /* 左から20px */
+    }
+
+.sinki{
+    position: relative; /* 今の位置を基準 */
+     top: 100px; /* 上から10px */
+     left: 450px; /* 左から20px */
+    }
+    
+
