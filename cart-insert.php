@@ -2,6 +2,7 @@
 <?php require 'header.php'; ?>
 <?php require 'menu.php'; ?>
 <?php require 'db-conect.php'; ?>
+<link href="styles/cart-insert.css" rel="stylesheet">
 <?php
 $pdo=new PDO($connect,USER,PASS);
 $id=$_POST['id'];
