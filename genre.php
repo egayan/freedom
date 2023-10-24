@@ -16,7 +16,7 @@ $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <title>ジャンル一覧</title>
 </head>
 <body>
-
+<div class="sum">
 <?php
 foreach($movies as $movie){
     $genre[$movie['genre']][] = $movie;
@@ -31,6 +31,7 @@ foreach($movies as $movie){
 
         <?php endforeach; ?>
     <?php endforeach; ?>
+    <div class="sum">
 </body>
 <?php require 'menu.php'; ?>
 </html>
