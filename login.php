@@ -1,10 +1,10 @@
 <?php session_start(); ?>
-<?php require 'db-conect.php'; ?>>
+<?php require 'db-conect.php'; ?>
     
 <?php 
   if($_SERVER["REQUEST_METHOD"]=='POST'){
     $pdo=new PDO($connect,USER,PASS);
-    $sql=-$pdo->prepare('select * from customer where address=?');
+    $sql=$pdo->prepare('select * from customer where address=?');
     $sql->execute([$_POST['login']]);
     foreach($sql as $row){
       if(password_verify($_POST['password'],$row['password'])== true){
@@ -37,7 +37,7 @@
     <img src="img/rogo.jpg" alt="rogo" title="rogo"></div>
 <?php 
 if(isset($message)){
-  echo $error;
+  echo $message;
 }
 ?>
    <form action='login.php' method="post">  
