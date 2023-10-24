@@ -4,7 +4,7 @@
 <?php 
   if($_SERVER["REQUEST_METHOD"]=='POST'){
     $pdo=new PDO($connect,USER,PASS);
-    $sql=-$pdo->prepure('select * from customer where address=?');
+    $sql=-$pdo->prepare('select * from customer where address=?');
     $sql->execute([$_POST['login']]);
     foreach($sql as $row){
       if(password_verify($_POST['password'],$row['password'])== true){
