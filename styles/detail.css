@@ -1,0 +1,46 @@
+html.body{
+    height: 100%;
+    width: 500px;
+}
+.wrap{
+    height: 100%;
+    width: 500px;
+}
+.mei{
+    position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    font-size: 40px;
+    }
+.syou img{
+    width: 500px;
+    height: 700px;
+}
+.syou{
+    position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: -65px; /* ä¸Šã‹ã‚‰10px */
+    left: -5px; /* å·¦ã‹ã‚‰20px */
+}
+.kato{
+    position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: -700px; /* ä¸Šã‹ã‚‰10px */
+    left: 890px; /* å·¦ã‹ã‚‰20px */
+}
+.ryoukin{
+    position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top:-200px; /* ä¸Šã‹ã‚‰10px */
+    left: 800px; /* å·¦ã‹ã‚‰20px */
+    font-size: 40px;
+}
+.zikan{
+    position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top:-760px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    font-size: 40px;
+}
+.mozi{
+    position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top:-760px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    font-size: 20px;
+}
