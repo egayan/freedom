@@ -31,7 +31,7 @@ foreach($movies as $movie){
 
 <?php foreach($genre as $key => $value){
     $split = explode(",",$value);
-    if($split equals($costomer['genre'])){ ?>
+    if($split equals($customer['genre'])){ ?>
     <h2><?php echo $key; ?></h2>
     <?php foreach($value as $movie);?>
         <a href="detail.php?id=<?php echo $movie['shohin_id']; ?>">
