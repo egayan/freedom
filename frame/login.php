@@ -41,7 +41,7 @@ if(isset($message)){
 ?>
    <form action='login.php' method="post">  
    <div class="name1">
-   メールアドレス---------<br></div>
+   メールアドレス<br></div>
 
    <div class="name2">
   <input type="text" name="login"><br></div>
@@ -62,9 +62,5 @@ if(isset($message)){
    
 </div>
 </body>
-<<<<<<< HEAD
 </html>
 <?php ob_end_flush();?>
-=======
-</html>
->>>>>>> main
