@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php require 'db-conect.php'; ?>
-    
+<?php ob_start();?>
 <?php 
   if($_SERVER["REQUEST_METHOD"]=='POST'){
     $pdo=new PDO($connect,USER,PASS);
@@ -8,8 +8,8 @@
     $sql->execute([$_POST['login']]);
     foreach($sql as $row){
       if(password_verify($_POST['password'],$row['password'])== true){
-      $_SESSION['movie']=[
-          'client_id'=>$row['id'],'name'=>$row['name'],
+      $_SESSION['customer']=[
+          'client_id'=>$row['client_id'],'name'=>$row['name'],
           'password'=>$row['password'],'address'=>$row['address'],
           'phone'=>$row['phone'],'birthday'=>$row['birthday'],'genre'=>$row['genre']
           ];
@@ -32,7 +32,6 @@
 </head>
 <body>
   <div class="wrap">
-   
     <div class="img">
     <img src="img/rogo.jpg" alt="rogo" title="rogo"></div>
 <?php 
@@ -42,7 +41,7 @@ if(isset($message)){
 ?>
    <form action='login.php' method="post">  
    <div class="name1">
-   メールアドレスaaaa<br></div>
+   メールアドレス<br></div>
 
    <div class="name2">
   <input type="text" name="login"><br></div>
@@ -64,3 +63,4 @@ if(isset($message)){
 </div>
 </body>
 </html>
+<?php ob_end_flush();?>
