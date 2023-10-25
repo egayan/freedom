@@ -2,6 +2,7 @@
 <?php require 'header.php'; ?>
 <?php require 'menu.php'; ?>
 <?php require 'db-conect.php'; ?>
+
 <?php
 $pdo=new PDO($connect,USER,PASS);
 $id=$_POST['id'];
@@ -13,5 +14,6 @@ $_SESSION['movie'][$id]=[
     'price'=>$_POST['price'],
     'image'=>$_POST['image']
 ];
-require 'cart-show.php';
 ?>
+<?php require 'cart-show.php';?>
+

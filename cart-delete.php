@@ -3,6 +3,5 @@
 <?php require 'menu.php'; ?>
 <?php
 unset($_SESSION['movie'][$_GET['id']]);
-
 require 'cart-show.php';
 ?>
