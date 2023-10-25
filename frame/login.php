@@ -28,7 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/login.css" rel="stylesheet">
-    <title>ログイン画面aaaaaaaaaaaaaaaaaaaaaaaaaa</title>
+    <title>ログイン画面</title>
 </head>
 <body>
   <div class="wrap">
@@ -41,7 +41,7 @@ if(isset($message)){
 ?>
    <form action='login.php' method="post">  
    <div class="name1">
-   メールアドレス<br></div>
+   メールアドレス---------<br></div>
 
    <div class="name2">
   <input type="text" name="login"><br></div>
