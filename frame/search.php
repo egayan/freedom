@@ -1,6 +1,6 @@
 <?php session_start(); ?>
-<?php require 'common/db-conect.php'; ?>
-<?php require 'common/header.php'; ?>
+<?php require 'db-conect.php'; ?>
+<?php require 'header.php'; ?>
 <?php
 $pdo=new PDO($connect,USER,PASS);
 $stmt=$pdo->query("select * from eiga");

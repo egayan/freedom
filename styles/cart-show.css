@@ -1,0 +1,15 @@
+img{
+    width: 160px;
+    height: 160px;
+}
+.iti{
+    position: relative; /* 今の位置を基準 */
+    top: 30px; /* 上から10px */
+    left: 325px; /* 左から20px */
+   
+}
+.kakutei{
+    position: relative; /* 今の位置を基準 */
+    top: 50px; /* 上から10px */
+    left: 788px; /* 左から20px */
+}

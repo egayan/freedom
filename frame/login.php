@@ -28,7 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/login.css" rel="stylesheet">
-    <title>ログイン画面</title>
+    <title>ログイン画面aaaaaaaaaaaaaaaaaaaaaaaaaa</title>
 </head>
 <body>
   <div class="wrap">
