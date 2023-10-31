@@ -1,0 +1,43 @@
+h1{
+    position: relative; /* 今の位置を基準 */
+    top: -220px; /* 上から10px */
+    left: 400px;
+
+}
+img{
+    width: 160px;
+    height: 160px;
+}
+
+    
+    .kensaku{
+        position: relative; /* 今の位置を基準 */
+        top: 0px; /* 上から10px */
+        left: 300px; /* 左から20px */
+         line-height: 1.5;
+         width: 100%;
+    }
+    .kekka{
+        position: relative; /* 今の位置を基準 */
+        top: 20px; /* 上から10px */
+        left: 90px;
+
+    }
+    .img2{
+        width: 160px;
+        height: 160px;
+        position: relative; /* 今の位置を基準 */
+        top: 20px; /* 上から10px */
+        left: 270px
+    }
+    .name2{
+        position: relative; /* 今の位置を基準 */
+        top: -80px; /* 上から10px */
+        left:490px;
+    }
+    .wrap {
+        height: 100px;
+        width: 600px;
+        position: absolute;
+        transform-origin: 0% 0%;
+    }
