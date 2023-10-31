@@ -13,8 +13,9 @@
           'password'=>$row['password'],'address'=>$row['address'],
           'phone'=>$row['phone'],'birthday'=>$row['birthday'],'genre'=>$row['genre']
           ];
+          session_write_close();
           header('Location: search.php');
-          exit;
+          exit; 
       }
   }
   $message='ログイン名パスワードが違います。';
@@ -28,8 +29,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/login.css" rel="stylesheet">
-<<<<<<< HEAD
-    <title>ログイン画面aaaaaaaaaaaaaaaaaaaaaaaaaa</title>
+    <title>ログイン画面</title>
 </head>
 <body>
   <div class="wrap">
@@ -43,19 +43,6 @@ if(isset($message)){
    <form action='login.php' method="post">  
    <div class="name1">
    メールアドレス<br></div>
-=======
-    <title>ログイン画面</title>
-</head>
-<body>
- <div class="wrap">
-   
-    <div class="img">
-    <img src="img/rogo.jpg" alt="rogo" title="rogo"></div>
-
-   <form action='search.php' method="post">  
-   <div class="name1">
-   メールアドレス<br>または<br>電話番号</div>
->>>>>>> main
 
    <div class="name2">
   <input type="text" name="login"><br></div>
@@ -76,9 +63,5 @@ if(isset($message)){
    
 </div>
 </body>
-<<<<<<< HEAD
 </html>
 <?php ob_end_flush();?>
-=======
-</html>
->>>>>>> main
