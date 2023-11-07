@@ -17,6 +17,11 @@ if(!empty($_SESSION['movie'])){
     }
     echo '<tr><td>合計</td><td></td><td></td><td>',$total,'</td><td></td></tr>';
     echo '</table>';
+    ?>
+    <form action=purchase.php method="get">
+        <input type="submit" value="購入">
+    </form>
+    <?php
 }else{
     echo 'カートに商品がありません';
 }

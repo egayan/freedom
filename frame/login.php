@@ -13,9 +13,8 @@
           'password'=>$row['password'],'address'=>$row['address'],
           'phone'=>$row['phone'],'birthday'=>$row['birthday'],'genre'=>$row['genre']
           ];
-          session_write_close();
           header('Location: search.php');
-          exit; 
+          exit;
       }
   }
   $message='ログイン名パスワードが違います。';
