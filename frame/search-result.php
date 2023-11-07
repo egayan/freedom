@@ -1,11 +1,6 @@
 <?php session_start();?>
-<?php
-    const SERVER='mysql218.phy.lolipop.lan';
-    const DBNAME='LAA1517813-asoateam';
-    const USER='LAA1517813';
-    const PASS='Pasuwado';
-    $connect = 'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8';
-?>
+<?php require 'db-conect.php'; ?>
+<?php require 'header.php'; ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -18,10 +13,6 @@
 </head>
 <body>
  <div class="wrap">
-   
-    <div class="img">
-    <img src="img/rogo.jpg" alt="rogo" title="rogo"></div>
-
     
    <div class="name1">
    検索</div>
@@ -32,26 +23,31 @@
         }
         }
     </script>
-    <form name="formname" action="search.php" method="post">
+    <form name="formname" action="search-result.php" method="get">
         <div class="kensaku">
         <input type="text" name="keyword" size="100" onkeypress="enter();"><br></div>
     </form>
 
-    <div class="osusume">
-   あなたへのおすすめ</div>
-  
-
-
     <?php
+        $keyword=$_GET['keyword'];
+        $pdo=new PDO($connect,USER,PASS);
+        $sql=$pdo->prepare('select * from eiga where shohin_mei LIKE ?');
+        $sql->execute(["%$keyword%"]);
+
+        echo '<h3>検索結果</h3>';
         //映画画像の表示
-        for($i=1;$i<=5;$i++){
+        foreach($sql as $row){
+            echo '<a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'];
+            echo '<img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'">'.'</a>';
+        }
+        /* for($i=1;$i<=5;$i++){
             echo '<div class="gazou',$i,'">';
             echo '<a href="login.php"><img src="img/rogo.jpg" alt="商品詳細ページへ"  title="rogo"></a>';
             echo '</div>';
-        }
+        } */
     ?>
   
-  <?php require 'menu.html';?>
+  <?php require 'menu.php';?>
 </div>
 </body>
 </html>
