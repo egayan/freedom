@@ -3,8 +3,8 @@
 <?php require 'header.php'; ?>
 <?php
 $pdo=new PDO($connect,USER,PASS);
-$gstmt=$pdo->query("select * from genre");
-$genres = $gstmt->fetchAll(PDO::FETCH_ASSOC);
+$gstmt=$pdo->query("select * from shohin_genre");
+$genre = $gstmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -19,18 +19,18 @@ $genres = $gstmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php
 foreach($genres as $genre){
-    $stmt=$pdo->prepare("select * from eiga JOIN shohin_genre ON eiga.shohin_id=shohin_genre.shohin_id WHERE genre_id=?");
+    $stmt=$pdo->query("select * from eiga where shohin_id IN(select shohin_id from eiga where genre_id=?)");
     $stmt->execute([$genre['genre_id']]);
     $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
     <h2><?php echo $genre['genre_name']; ?></h2>
     <?php foreach($movies as $movie): ?>
         <a href="detail.php?id=<?php echo $movie['shohin_id']; ?>">
            <div class="sum"> <img src="image/<?php echo $movie['image']; ?>" alt="<?php echo $movie['shohin_mei']; ?>"></div>
         </a><br><?php echo $movie['shohin_mei']; ?>
-        <?php endforeach; 
-        }
-    ?>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
 </body>
 <?php require 'menu.php'; ?>
 </html>

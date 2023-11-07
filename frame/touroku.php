@@ -108,15 +108,11 @@ $b=count($a);
     }
     echo"<div>";
     if(!empty($name)&&!empty($address)&&!empty($phone)&&!empty($password)&&!empty($birthday)&&!empty($genre)){
+        $genre=implode(',',$genre);
         $password=password_hash($_POST['password'],PASSWORD_DEFAULT);
         $pdo=new PDO($connect,USER,PASS);
-        $stmt=$pdo->prepare("INSERT INTO customer(name,address,phone,password,birthday)VALUES(?,?,?,?,?)");
-        $stmt->execute([$name,$address,$phone,$password,$birthday]);
-        $id=$pdo->lastInsertId();
-        foreach($genre as $c){
-            $stmt=$pdo->prepare("INSERT INTO customer_genre(client_id, genre_id)SELECT ?,genre_id FROM genre WHERE genre_name=?");
-            $stmt->execute([$id,$c]);
-        }
+        $stmt=$pdo->prepare("INSERT INTO customer(name,address,phone,password,birthday,genre)VALUES(?,?,?,?,?,?)");
+        $stmt->execute([$name,$address,$phone,$password,$birthday,$genre]);
         header('Location: login.php');
         exit;
     }
