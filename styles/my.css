@@ -1,0 +1,52 @@
+h1{
+    position: relative; /* 今の位置を基準 */
+    top: -200px; /* 上から10px */
+    left: 470px;
+}
+img{
+    width: 160px;
+    height: 160px;
+}
+.a{
+    position: relative; /* 今の位置を基準 */
+    top: -150px; /* 上から10px */
+    left: 400px;
+}
+.name{
+    position: relative; /* 今の位置を基準 */
+    top: -100px; /* 上から10px */
+    left: 400px;
+}
+.name1{
+    position: relative; /* 今の位置を基準 */
+    top: -125px; /* 上から10px */
+    left: 550px;
+}
+.meal{
+    position: relative; /* 今の位置を基準 */
+    top: -90px; /* 上から10px */
+    left: 400px;
+}
+.meal2{
+    position: relative; /* 今の位置を基準 */
+    top: -115px; /* 上から10px */
+    left: 550px;
+}
+.ku-pon{
+    position: relative; /* 今の位置を基準 */
+    top: -85px; /* 上から10px */
+    left: 400px;
+}
+.h{
+    position: relative; /* 今の位置を基準 */
+    top: -50px; /* 上から10px */
+    left: 545px;
+    height:35px; width:100px;
+    font-size:  20px;
+}
+.wrap {
+    height: 100px;
+    width: 600px;
+    position: absolute;
+    transform-origin: 0% 0%;
+}
