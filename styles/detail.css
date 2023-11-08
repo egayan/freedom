@@ -19,7 +19,7 @@ html.body{
     height: 700px;
 }
 .syou{
-    position:  absolute;/* 要素の配置方法を指定 */            /* 余白指定 */
+    position:  absolute;/* 要素の配置方法を指定 */
     left:  5px;/* 左からの位置指定 */
     top: 190px;/* 上からの位置指定 */
 }
