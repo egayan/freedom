@@ -1,0 +1,62 @@
+h1{
+    position: relative; /* 今の位置を基準 */
+    top: -220px; /* 上から10px */
+    left: 400px;
+}
+img{
+    width: 160px;
+    height: 160px;
+}
+.wrap {
+    height: 100px;
+    width: 600px;
+    position: absolute;
+    transform-origin: 0% 0%;
+}
+.a{
+    position: relative; /* 今の位置を基準 */
+    top: 0px; /* 上から10px */
+    left: 540px;
+    height:35px; width:35px;
+    font-size:  23px;
+}.b{
+    position: relative; /* 今の位置を基準 */
+    top: 0px; /* 上から10px */
+    left: 540px;
+    height:35px; width:35px;
+    font-size:  23px;
+}.c{
+    position: relative; /* 今の位置を基準 */
+    top: 0px; /* 上から10px */
+    left: 540px;
+    height:35px; width:35px;
+    font-size:  23px;
+}.d{
+    position: relative; /* 今の位置を基準 */
+    top: 0px; /* 上から10px */
+    left: 540px;
+    height:35px; width:35px;
+    font-size:  23px;
+}.e{
+    position: relative; /* 今の位置を基準 */
+    top: 0px; /* 上から10px */
+    left: 540px;
+    height:35px; width:35px;
+    font-size:  23px;
+}.f{
+    position: relative; /* 今の位置を基準 */
+    top: 0px; /* 上から10px */
+    left: 540px;
+    height:35px; width:35px;
+    font-size:  23px;
+}
+.rect{
+    width: 1000px;
+    height: 200px;
+    border: 1px solid;
+}
+.rect{
+    width: 1000px;
+    height: 200px;
+    border: 1px solid;
+}
