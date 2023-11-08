@@ -1,7 +1,7 @@
 h1{
     position: relative; /* 今の位置を基準 */
     top: -220px; /* 上から10px */
-    left: 400px;
+    left: 500px;
     display: inline-block;
     padding:10px 100px; /* 枠と文字の空間 */
     border: solid 2px #454545;
