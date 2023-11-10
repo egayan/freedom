@@ -4,8 +4,14 @@ ob_start();
 require 'db-conect.php';
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
-
-
+    if($_POST['coupon']){
+    $stmt = $pdo->prepare("UPDATE customer SET coupon=? WHERE id=?");
+    $stmt->execute($_POST['coupon'],$_SESSION['customer_id']);
+    }
+    foreach($_SESSION['movie'] as $product_id => $product){
+        $stmt = $pdo->prepare("INSERT INTO purchase(shohin_id, client_id, purchase_date, amount_spent) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$_SESSION['customer_id'], $product_id, date('Y-m-d H:i:s'), $product['price']]);
+    }
     unset($_SESSION['movie']);
     header('Location: my.php');
     exit;
@@ -15,6 +21,8 @@ $total=0;
 foreach($cart as $item){
     $total+= $item['price'];
 }
+$couponA=true;
+$couponB=true;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -28,18 +36,20 @@ foreach($cart as $item){
     <h1>購入画面</h1>
     <table>
         <tr>
-            <th>商品名</th><th>支払方法</th><th>金額</th>
+            <th>商品名</th><?php if($couponA || $couponB):?><th>クーポン</th><?php endif;?><th>金額</th>
         </tr>
         <?php foreach($cart as $item):?>
         <tr>
             <td><?php echo $item['name'];?></td>
+            <?php if($couponA || $couponB):?>
             <td>
-                <select name="pay">
-                    <option value="cash">現金</option>
-                    <option value="card">カード払い</option>
-                    <option value="coupon">クーポンを使用</option>
+                <select name="coupon">
+                    <option value="0">クーポンを使用しない</option>
+                    <?php if($couponA):?><option value="1">クーポンAを使用\</option><?php endif; ?>
+                    <?php if($couponB):?><option value="2">クーポンBを使用\</option><?php endif; ?>
                 </select>
             </td>
+            <?php endif;?>
             <td><?php echo $item['price']; ?></td>
         </tr>
         <?php endforeach; ?>
