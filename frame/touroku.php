@@ -66,9 +66,7 @@ $b=count($a);
             $genre=$_POST['genre'];
         }else{
             $genre=[];
-        }
-        
-    
+        }    
     //<p>14から31は文字を赤でお願い</p>
     echo'<div class="red">';
     if(empty($name)){
@@ -123,8 +121,6 @@ $b=count($a);
 }
 ob_end_flush();
 ?>
-
-
     <form action="login.php" method="get">
         <div class="rog">
         <button type="submit">ログイン画面へ戻る</button><div>
