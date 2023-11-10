@@ -1,1 +1,1 @@
-<img src="img/rogo.jpg" weight=100px height= 100px; >
+<img src="img/sinki.jpg" weight=160px height= 160px; >
