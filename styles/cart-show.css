@@ -2,14 +2,24 @@ img{
     width: 160px;
     height: 160px;
 }
+html.body{
+  height: 100%;
+  width: 0px;
+}
+
 .iti{
-    position: relative; /* 今の位置を基準 */
-    top: 30px; /* 上から10px */
+    position: absolute; /* 今の位置を基準 */
+    top: 190px; /* 上から10px */
     left: 325px; /* 左から20px */
-   
 }
+.button {
+    width: 6em;
+    height:2em;
+    border-radius:30px;
+  }
 .kakutei{
-    position: relative; /* 今の位置を基準 */
-    top: 50px; /* 上から10px */
-    left: 788px; /* 左から20px */
+     position: absolute; /* 今の位置を基準 */
+    top: 830px; /* 上から10px */
+    left: 940px; /* 左から20px */
 }
+
