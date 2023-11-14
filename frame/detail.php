@@ -42,10 +42,6 @@ $movie = $stmt->fetch(PDO::FETCH_ASSOC);
         echo '</p></div>';
         echo '</form>';
         ?>
-        <form action="review" method="get">
-        <input type="hidden" name="shohin_id" value="<?php echo $movie['shohin_id']; ?>">
-            <input type="submit" value="レビューを見る">
-        </form>
         </body>
 <?php require 'menu.php'; ?>
 </html>
