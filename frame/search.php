@@ -1,6 +1,30 @@
-<?php session_start(); ?>
-<?php require 'db-conect.php'; ?>
-<?php require 'header.php'; ?>
+<?php session_start();
+require 'header.php'; 
+require 'db-conect.php';
+$pdo=new PDO($connect,USER,PASS);
+//履歴処理
+$sql=$pdo->prepare('UPDATE customer SET receive_day=CURRENT_TIMESTAMP WHERE client_id=?');
+$receive=$sql->execute([$_SESSION['customer']['client_id']]);
+    
+if(!isset($_SESSION['customer']['first_login'])){
+    $stmt=$pdo->prepare('SELECT MONTH(birthday) FROM customer WHERE client_id=?');
+    $stmt->execute([$_SESSION['customer']['client_id']]);
+    $birthday_month=$stmt->fetch(PDO::FETCH_COLUMN);
+    $month=date('n');
+    
+    if($month==$birthday_month){
+        $coupon=2;
+    }else{
+        $coupon=1;
+    }
+    $last_day=date('Y-m-t H:i:s');
+    $_SESSION['customer']['first_login']=true;
+    //更新処理
+    $sql=$pdo->prepare('UPDATE customer SET coupon_id=?,date_expiry=? WHERE client_id=?');
+    $sql->execute([$coupon,$last_day,$_SESSION['customer']['client_id']]);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -17,7 +41,6 @@
 
 <?php
     $a=$_SESSION['customer']['genre'];
-    $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->prepare('select * from eiga where genre LIKE ? ORDER BY RAND() LIMIT 4');
     $sql->execute(["%$a%"]);
     echo '<h3>あなたへのおすすめ</h3>';
