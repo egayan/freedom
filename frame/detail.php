@@ -35,8 +35,11 @@ $movie = $stmt->fetch(PDO::FETCH_ASSOC);
         echo '<input type="hidden" name="image" value="',$movie['image'],'">';
         echo '<div class="kato"><p><input type="submit" value="カートに追加"></p></div>';
         echo '</form>';
-        echo '<form action="getail.php" method="post">';//レビュー
-        echo '<div class="review"><p><input type="submit" value="レビュー評価を見る"></p></div>';
+        echo '<form action="review" method="get">'; // レビュー
+        echo '<div class="review"><p>';
+        echo '<input type="hidden" name="shohin_id" value="' . $movie['shohin_id'] . '">';
+        echo '<input type="submit" value="レビューを見る">';
+        echo '</p></div>';
         echo '</form>';
         ?>
         <form action="review" method="post">
