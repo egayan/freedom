@@ -1,5 +1,4 @@
 <?php session_start(); ?>
- <div class="iro"><?php require 'header.php'; ?><div >
 <?php require 'db-conect.php'; ?>
 <?php ob_start();?>
 <?php 
@@ -33,7 +32,8 @@
     <title>ログイン画面</title>
 </head>
 <body>
-<img >
+<img src="img/sinki.jpg" alt="rogo" title="rogo" width: 160px;
+    height: 160px;>
 <?php 
 if(isset($message)){
   echo $message;
