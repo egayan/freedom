@@ -25,8 +25,6 @@ $movie = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="ryoukin"><?php echo "料金：",$movie['price'],"円"; ?> </div>
         <div class="zikan"><?php echo $movie['time']; ?> </div>	
         <div class="mozi"><?php echo $movie['explanation']; ?> </div>
-<?php echo $movie['shohin_mei']; ?>
-        <img src="image/<?php echo $movie['image']; ?>" alt="<?php echo $movie['shohin_mei']; ?>">
         <?php
         echo '<form action="cart-insert.php" method="post">';
         echo '<input type="hidden" name="id" value="',$movie['shohin_id'],'">';
@@ -43,5 +41,4 @@ $movie = $stmt->fetch(PDO::FETCH_ASSOC);
         echo '</form>';
         ?>
         </body>
-<?php require 'menu.php'; ?>
 </html>

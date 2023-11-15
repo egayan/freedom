@@ -1,11 +1,11 @@
 <?php session_start();
 require 'header.php'; 
+require 'menu.php';
 require 'db-conect.php';
 $pdo=new PDO($connect,USER,PASS);
 //履歴処理
 $sql=$pdo->prepare('UPDATE customer SET receive_day=CURRENT_TIMESTAMP WHERE client_id=?');
 $receive=$sql->execute([$_SESSION['customer']['client_id']]);
-    
 if(!isset($_SESSION['customer']['first_login'])){
     $stmt=$pdo->prepare('SELECT MONTH(birthday) FROM customer WHERE client_id=?');
     $stmt->execute([$_SESSION['customer']['client_id']]);
@@ -24,7 +24,7 @@ if(!isset($_SESSION['customer']['first_login'])){
     $sql->execute([$coupon,$last_day,$_SESSION['customer']['client_id']]);
 }
 ?>
-
+<link rel="stylesheet" href="styles/search.css">
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -34,21 +34,23 @@ if(!isset($_SESSION['customer']['first_login'])){
 </head>
 <body>
     <form action="search-result.php" method="get">
-        商品検索
-    <input type="text" name="keyword">
-    <input type="submit" value="検索">
+        <div class="name1"><h3>商品検索</h3><div>
+    <input type="text" name="keyword" class="kensaku">
+    <input type="submit" value="検索" class="kennsabotan">
 </form>
 
 <?php
+    $i=1;
     $a=$_SESSION['customer']['genre'];
     $sql=$pdo->prepare('select * from eiga where genre LIKE ? ORDER BY RAND() LIMIT 4');
     $sql->execute(["%$a%"]);
-    echo '<h3>あなたへのおすすめ</h3>';
+    echo '<div class="osusume"><h3>あなたへのおすすめ</h3><div>';
     foreach($sql as $row){
-        echo '<a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'];
-        echo '<img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'">'.'</a>';
+        echo '<div class="gazou',$i,'"><img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'"class="san">'.'</a>';
+        echo '<br><a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'],"<div>";
+        $i++;
+        
     }
-    require 'menu.php';
 ?>
 </body>
 </html>

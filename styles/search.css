@@ -1,64 +1,63 @@
-img{
-    width: 160px;
-    height: 160px;
-}
-
-.wrap {
-    height: 100px;
-    width: 500px;
-
+.san{
+    width: 300px;
+    height: 400px;
 }
 .name1{
-    position: relative; /* 今の位置を基準 */
-    top: 30px; /* 上から10px */
-    left: 200px; /* 左から20px */
+    position:  absolute; /* 今の位置を基準 */
+    top: 150px; /* 上から10px */
+    left: 550px; /* 左から20px */
     font-size:  40px; /* フォントサイズ調整*/
 }
 
 .kensaku{
-    position: relative; /* 今の位置を基準 */
-    top: 40px; /* 上から10px */
-    left: 200px; /* 左から20px */
-     line-height: 1.5;
-     width: 100%;
+    position: absolute; /* 今の位置を基準 */
+    top: 120px; /* 上から10px */
+    left: -270px; /* 左から20px */
+    
+     width:725px ;
 }
-
+.kennsabotan{
+    position: absolute; /* 今の位置を基準 */
+    top: 120px; /* 上から10px */
+    left: 455px; /* 左から20px */
+    width: 6em;
+    height:1.6em;
+}
 .osusume {
-    position: relative; /* 今の位置を基準 */
-    top: 160px; /* 上から10px */
-    left: 410px; /* 左から20px */
-    font-size:  40px; /* フォントサイズ調整*/
+    position: absolute; /* 今の位置を基準 */
+    top: 150px; /* 上から10px */
+    left: -80px; /* 左から20px */
+ height: 100%;
+  width: 790px;
 }
 
 .gazou1{
-    position: relative; /* 今の位置を基準 */
-    top: 195px; /* 上から10px */
-    left: 100px; /* 左から20px */
+    position:absolute; /* 今の位置を基準 */
+    top: 120px; /* 上から10px */
+    left: -425px; /* 左から20px */
+    font-size:  20px;
+    width: 310px;
 }
 
 .gazou2{
-    position: relative; /* 今の位置を基準 */
-    top: 30px; /* 上から10px */
-    left: 300px; /* 左から20px */
+    position: absolute; /* 今の位置を基準 */
+    top: 1px; /* 上から10px */
+    left: 330px; /* 左から20px */
+     width: 310px;
 }
 
 .gazou3{
-    position: relative; /* 今の位置を基準 */
-    top: -135px; /* 上から10px */
-    left: 500px; /* 左から20px */
+    position: absolute; /* 今の位置を基準 */
+    top: 1px; /* 上から10px */
+    left: 330px; /* 左から20px */
 }
 
 .gazou4{
-    position: relative; /* 今の位置を基準 */
-    top: -300px; /* 上から10px */
-    left: 700px; /* 左から20px */
+    position: absolute; /* 今の位置を基準 */
+    top: 1px; /* 上から10px */
+    left: 330px; /* 左から20px */
 }
 
-.gazou5{
-    position: relative; /* 今の位置を基準 */
-    top: -465px; /* 上から10px */
-    left: 900px; /* 左から20px */
-}
 
 /*  ↓ nenu.php のCSS */
 
