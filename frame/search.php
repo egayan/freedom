@@ -13,9 +13,9 @@ if(!isset($_SESSION['customer']['first_login'])){
     $month=date('n');
     
     if($month==$birthday_month){
-        $coupon=2;
-    }else{
         $coupon=1;
+    }else{
+        $coupon=2;
     }
     $last_day=date('Y-m-t H:i:s');
     $_SESSION['customer']['first_login']=true;
