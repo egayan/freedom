@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+ <div class="iro"><?php require 'header.php'; ?><div >
 <?php require 'db-conect.php'; ?>
 <?php ob_start();?>
 <?php 
@@ -32,9 +33,7 @@
     <title>ログイン画面</title>
 </head>
 <body>
-  <div class="wrap">
-    <div class="img">
-    <img src="img/rogo.jpg" alt="rogo" title="rogo"></div>
+<img >
 <?php 
 if(isset($message)){
   echo $message;
@@ -44,24 +43,21 @@ if(isset($message)){
    <div class="name1">
    メールアドレス<br></div>
 
-   <div class="name2">
-  <input type="text" name="login"><br></div>
+  <input type="text" name="login"  class="name2"><br>
 
     <div class="pasu1">
     パスワード</div>
 
-    <div class="pass2">
-    <input type="password" name="password"><br></div>
+    <input type="password" name="password" class="pass2"><br>
 
-    <div class="rogu">
-    <input type="submit" value="ログイン"></div>
+    <input type="submit" value="ログイン"  class="rogu">
    </form>
    <form action='touroku.php' method="get">
-   <div class="sinki">
-   <input type="submit" value="新規登録の方はこちら"></div>
+
+   <input type="submit" value="新規登録の方はこちら"  class="sinki">
    </form>
    
-</div>
+
 </body>
 </html>
 <?php ob_end_flush();?>

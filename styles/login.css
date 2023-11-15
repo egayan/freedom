@@ -1,52 +1,49 @@
-img{
-    width: 160px;
-    height: 160px;
-}
 
-.wrap {
-     height: 100px;
+.name1{
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 200px; /* ä¸Šã‹ã‚‰10px */
+    left: 550px; /* å·¦ã‹ã‚‰20px */
      width: 300px;
-}
-
- .name1{
-    position: relative; /* 今の位置を基準 */
-    top: 3px; /* 上から10px */
-    left: 290px; /* 左から20px */
     }
 
 .name2{
-     position: relative; /* 今の位置を基準 */
-     top: 5px; /* 上から10px */
-     left: 450px; /* 左から20px */
+     position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+     top: 220px; /* ä¸Šã‹ã‚‰10px */
+     left: 550px; /* å·¦ã‹ã‚‰20px */
      line-height: 1.5;
-     width: 100%;
+     width: 6em;
+    line-height: 1.5;
+     width: 300px;
     }
 
 .pasu1{
-    position: relative; /* 今の位置を基準 */
-     top: 50px; /* 上から10px */
-    left: 300px; /* 左から20px */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+     top: 300px; /* ä¸Šã‹ã‚‰10px */
+    left: 550px; /* å·¦ã‹ã‚‰20px */
+     width: 300px;
     }
 
 .pass2{
-    position: relative; /* 今の位置を基準 */
-     top: 50px; /* 上から10px */
-    left: 450px; /* 左から20px */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+     top: 320px; /* ä¸Šã‹ã‚‰10px */
+    left: 550px; /* å·¦ã‹ã‚‰20px */
     line-height: 1.5;
-    width: 100%;
+     width: 300px;
     }
 
 
 .rogu{
-    position: relative; /* 今の位置を基準 */
-     top: 100px; /* 上から10px */
-    left: 500px; /* 左から20px */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+     top: 410px; /* ä¸Šã‹ã‚‰10px */
+    left: 660px; /* å·¦ã‹ã‚‰20px */
+    width: 6em;
     }
 
 .sinki{
-    position: relative; /* 今の位置を基準 */
-     top: 90px; /* 上から10px */
-     left: 850px; /* 左から20px */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+     top: 500px; /* ä¸Šã‹ã‚‰10px */
+     left: 990px; /* å·¦ã‹ã‚‰20px */
+    
     }
     
 
