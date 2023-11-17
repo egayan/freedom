@@ -1,6 +1,7 @@
 <?php session_start();?>
 <?php require 'db-conect.php'; ?>
 <?php require 'header.php'; ?>
+<?php require 'menu.php';?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -51,7 +52,7 @@
         } */
     ?>
   
-  <?php require 'menu.php';?>
+ 
 </div>
 </body>
 </html>
