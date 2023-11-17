@@ -9,21 +9,24 @@ $stmt->execute([$_SESSION['customer']['client_id']]);
 $use_frag=$stmt->fetchColumn();
 if($_SERVER['REQUEST_METHOD']=='POST'){
     foreach($_SESSION['movie'] as $product_id => $product){
+        //使用状態の確認
+        $stmt=$pdo->prepare("SELECT use_frag FROM customer WHERE client_id=?");
+        $stmt->execute([$_SESSION['customer']['client_id']]);
+        $use_frag=$stmt->fetchColumn(); 
         //クーポンの使用判定
         if(isset($_POST['coupon'][$product_id])){
             $coupon_id=$_POST['coupon'][$product_id];
         }else{
             $coupon_id=0;
         }
-        //クーポン持っているときの処理
-        if($use_frag==0&&$coupon_id!=0){
+        //クーポン有の処理
+        if($use_frag==0){
             //割引率
             $stmt=$pdo->prepare("SELECT discount_rate FROM coupon WHERE coupon_id=?");
             $stmt->execute([$coupon_id]);
             $discount_rate=$stmt->fetchColumn();
             //価格の更新
-            $new_price=$product['price']*(1-$discount_rate);
-            $new_price=ROUND($new_price);
+            $new_price=$product['price']*$discount_rate;
             //購入処理
             $stmt = $pdo->prepare("INSERT INTO purchase(shohin_id, client_id, amount_spent) VALUES (?, ?, ?)");
             $stmt->execute([$product_id,$_SESSION['customer']['client_id'], $new_price]);
@@ -61,32 +64,29 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/login.css" rel="stylesheet">
+    <link href="style/p.css" rel="stylesheet">
     <title>購入画面</title>
 </head>
 <body>
-    <h1>購入画面</h1>
+    <div class="warp">
+<img src="img/rogo.jpg">
     <table>
         <tr>
             <th>商品名</th><th>クーポン</th><th>金額</th>
         </tr>
-        <form method="post">
         <?php foreach($cart as $product_id=>$item):?>
             <tr>
                 <td><?php echo $item['name'];?></td>
                 <td>
-                    <!--クーポンがないとき -->
                     <?php if($use_frag==1):?>
                         <input type='hidden' name="coupon[<?php echo $product_id; ?>]" 
                         value="0" checked>クーポンなし
                     <?php else :?>
-                        <!--クーポンあるとき -->
                         <?php foreach($coupons as $coupon):?>
                             <input type='radio' name="coupon[<?php echo $product_id; ?>]" 
                             value="<?php echo $coupon ['coupon_id']; ?>">
                             <?php echo $coupon['coupon_name'];?>
                         <?php endforeach;?>
-                        <!-- クーポン使わないとき -->
                         <input type='radio' name="coupon[<?php echo $product_id; ?>]" 
                         value="0" checked>クーポンを使用しない
                     <?php endif;?>
@@ -94,11 +94,17 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td><?php echo $item['price']; ?></td>
             </tr>
         <?php endforeach; ?>
-    </table>
-    <p>合計金額：<?php echo $total; ?></p>
-
+        <td class="none"></td>
+        <td class="a" >合計金額</td>
+        <td ><?php echo $total; ?></td>
+        <td class="none">
+        <div class="kounyuu">
+    <form method="post">
         <input type="submit" value="購入">
+        </td>
     </form>
+    </table>
+                        </div>
 </body>
 </html>
 <?php ob_end_flush();?>
