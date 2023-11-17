@@ -1,25 +1,25 @@
 img{
-    width: 160px;
-    height: 160px;
+  width: 160px;
+  height: 160px;
 }
 html.body{
-  height: 100%;
-  width: 0px;
+height: 100%;
+width: 0px;
 }
 
 .iti{
-    position: absolute; /* 今の位置を基準 */
-    top: 190px; /* 上から10px */
-    left: 325px; /* 左から20px */
+  position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+   /* ä¸Šã‹ã‚‰10px */
+  left: 325px; /* å·¦ã‹ã‚‰20px */
+width: 700px;
 }
 .button {
-    width: 6em;
-    height:2em;
-    border-radius:30px;
-  }
-.kakutei{
-     position: absolute; /* 今の位置を基準 */
-    top:  429px; /* 上から10px */
-    left: 940px; /* 左から20px */
+  width: 6em;
+  height:2em;
+  border-radius:30px;
 }
-
+.kakutei{
+   position: relative; 
+  left: 960px; 
+width: 300px;
+}
