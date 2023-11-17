@@ -6,7 +6,6 @@ img{
 .wrap {
     height: 100px;
     width: 500px;
-
 }
 .name1{
     position: relative; /* 今の位置を基準 */
