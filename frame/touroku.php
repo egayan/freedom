@@ -10,7 +10,16 @@
     <title>新規登録画面</title>
 </head>
 <?php
-$a=array("スポーツ","アニメ","アクション","アドベンチャー","青春","ファンタジー","コメディ","ホラー","ミステリ－","ドラマ","サスペンス","ロマンス","ファミリー","ドキュメンタリー","SF");
+// データベースからジャンルの一覧を取得
+$pdo = new PDO($connect, USER, PASS);
+$stmt = $pdo->prepare('SELECT * FROM genre');
+$stmt->execute();
+$genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$flag=0;
+$a=[];
+foreach($genres as $genre){
+    $a[]=$genre['genre_name'];
+}
 $b=count($a);
 ?>
 <body>
@@ -80,11 +89,23 @@ $b=count($a);
         echo '<div class="error2">';
         echo '<p>','メールアドレスは必須項目です','</p>';
         echo '</div>';
-    }
-    if(empty($phone)){
-        echo '<div class="error3">';
-        echo '<p>','電話番号は必須項目です','</p>';
-        echo '</div>';
+    }else{
+        $stmt=$pdo->prepare('SELECT COUNT(*) FROM customer WHERE address = ?');
+        $stmt->execute([$address]);
+        $count=$stmt->fetchColumn();
+        if ($count>0) {
+            echo 'このメールアドレスは既に使用されています';
+            $flag=1;
+        }else{
+            if(empty($phone)){
+                echo '<div class="error3">';
+                echo '<p>','電話番号は必須項目です','</p>';
+                echo '</div>';        
+            }elseif (!preg_match("/^\d{10,11}$/", $phone)) {
+                echo '電話番号は10桁または11桁の数字で入力してください';
+                $flag=1;
+            }
+        }        
     }
     if(empty($password)){
         echo '<div class="error4">';
@@ -107,7 +128,7 @@ $b=count($a);
         echo '</div>';
     }
     echo"<div>";
-    if(!empty($name)&&!empty($address)&&!empty($phone)&&!empty($password)&&!empty($birthday)&&!empty($genre)){
+    if(!empty($name)&&!empty($address)&&!empty($phone)&&!empty($password)&&!empty($birthday)&&!empty($genre)&&$flag==0){
         $password=password_hash($_POST['password'],PASSWORD_DEFAULT);
         $pdo=new PDO($connect,USER,PASS);
         $stmt=$pdo->prepare("INSERT INTO customer(name,address,phone,password,birthday)VALUES(?,?,?,?,?)");

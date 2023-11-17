@@ -3,8 +3,8 @@
 <?php require 'header.php'; ?>
 <?php
 $pdo=new PDO($connect,USER,PASS);
-$stmt=$pdo->query('SELECT shohin_id,SUM(amount_spent) AS total FROM purchase
-                    GROUP BY shohin_id ORDER BY total  LIMIT 10');
+$stmt=$pdo->query('SELECT purchase.shohin_id,SUM(amount_spent) AS total ,image FROM purchase
+                    JOIN eiga ON  purchase.shohin_id=eiga.shohin_id GROUP BY purchase.shohin_id ORDER BY total DESC LIMIT 10');
 $ranking=$stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -17,8 +17,17 @@ $ranking=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
  <!-- 画像をクリックしたら詳細画面に飛ぶ -->
     <h1>売上ランキング</h1>
-    <?php foreach($ranking as $rank):?>
-        <?php echo $rank['shohin_id']?><br>
+    <table>
+        <tr>
+            <th>順位</th><th>商品</th>
+        </tr>
+        <?php foreach($ranking as $key => $rank):?>
+        <tr>
+            <td><?php echo $key+1;?>位</td>
+            <td><a href="detail.php?id=<?php echo $rank['shohin_id'];?>">
+            <image src="img/<?php echo $rank['image'];?>" alt="商品画像"></a></td>
+        </tr>
+    </table>
     <?php endforeach;?>
    <?php require 'menu.php';?>
 </body>

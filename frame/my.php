@@ -1,3 +1,74 @@
+<?php
+session_start();
+require 'db-conect.php';
+ob_start();
+require 'header.php';
+$pdo = new PDO($connect, USER, PASS);
+// ログアウトが押された場合
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header('Location: login.php');
+    exit;
+}
+
+// フォームが送信された場合の処理
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name=$_POST['name'];
+    $address=$_POST['address'];
+    $phone=$_POST['phone'];
+    $password=$_POST['password'];
+
+    // アドレスのチェック
+    if(isset($_SESSION['customer']['client_id'])){
+        $id=$_SESSION['customer']['client_id'];
+    }else{
+        $id=null;
+    }
+    if(!preg_match("/^\d{10,11}$/", $phone)){
+        echo '電話番号は10桁または11桁の数字で入力してください。';
+        exit;
+    }
+    $stmt=$pdo->prepare('SELECT * FROM customer WHERE address = ?');
+    if($id){
+        $stmt=$pdo->prepare('SELECT * FROM customer WHERE client_id != ? AND address = ?');
+        $stmt->execute([$id, $address]);
+    }else{
+        $stmt->execute([$address]);
+    }
+    $customer = $stmt->fetchAll();
+    
+    if (empty($customer)) {
+        // アドレスが重複していない場合は更新
+        if ($id) {
+            // 更新
+            if(!empty($pqwwword)){
+                //空欄でないなら更新
+                $stmt = $pdo->prepare('UPDATE customer SET name=?, address=?,phone=?,password=? WHERE client_id=?');
+                $stmt->execute([$name, $address,$phone,password_hash($password, PASSWORD_DEFAULT), $id]);    
+            }else{
+                $stmt = $pdo->prepare('UPDATE customer SET name=?, address=?, phone=? WHERE client_id=?');
+                $stmt->execute([$name, $address,$phone,$id]);
+            }
+            $_SESSION['customer'] = [
+                'id' => $id,
+                'name' => $name,
+                'address' => $address,
+                'phone' => $phone,
+                'password' => $password,
+            ];
+            echo 'お客様情報を更新しました。';
+        }
+    }else{
+        echo 'メールアドレスがすでに使用されていますので、変更してください。';
+    }
+}
+// ユーザー情報の取得
+if(isset($_SESSION['customer'])){
+    $userinfo=$_SESSION['customer'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,18 +77,22 @@
     <title>マイページ</title>
     <link href="css/my.css" rel="stylesheet">
 </head>
-<body><div class="wrap">
-
-
-    <div class="img"><img src="img/rogo.jpg"></div>
-    <p><a href=""><</a></p>
-    <h1>マイページ</h1>
-  <div class="name">アカウント名</div><div class="name1"><input type="text" name="name"></div>
-   <p><div class="meal">メールアドレス</div><div class="meal2"><input type="text"name="adress"></div></p>
-   <p><div class="ku-pon">クーポン</div></p>
-   <input type="submit" value="変更"class="h">
-   <?php require 'menu.php';?>
-</div>
+<body>
+    <div class="wrap">
+        <p><a href=""><</a></p>
+        <h1>マイページ</h1>
+        <form action="" method="post">
+            <table>
+                <tr><td>お名前</td><td><input type="text" name="name" value="<?php echo $userinfo['name']; ?>"></td></tr>
+                <tr><td>メールアドレス</td><td><input type="text" name="address" value="<?php echo $userinfo['address']; ?>"></td></tr>
+                <tr><td>電話番号</td><td><input type="text" name="phone" value="<?php echo $userinfo['phone']; ?>"></td></tr>
+                <tr><td>パスワード</td><td><input type="password" name="password" value=""></td></tr>
+            </table>
+            <input type="submit" value="確定">
+        </form>
+        <p><a href="my.php?logout=1">ログアウト</a></p>
+        <?php require 'menu.php'; ?>
+    </div>
+    <?php ob_end_flush();?>
 </body>
 </html>
-
