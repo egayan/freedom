@@ -8,7 +8,7 @@
    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/search.css" rel="stylesheet">
+    <link href="styles/search2.css" rel="stylesheet">
     <title>検索画面</title>
 </head>
 <body>
@@ -37,8 +37,12 @@
         echo '<h3>検索結果</h3>';
         //映画画像の表示
         foreach($sql as $row){
-            echo '<a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'];
+            echo '<div class="gazou1">';
             echo '<img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'">'.'</a>';
+            echo '</div>';
+            echo '<div class="name2">';
+            echo '<a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'];
+            echo '</div>';
         }
         /* for($i=1;$i<=5;$i++){
             echo '<div class="gazou',$i,'">';
