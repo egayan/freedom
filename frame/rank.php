@@ -12,23 +12,25 @@ $ranking=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/rank.css" rel="stylesheet">
     <title>売上ランキング</title>
 </head>
 <body>
+<?php require 'menu.php';?>
  <!-- 画像をクリックしたら詳細画面に飛ぶ -->
+ <div class="warp">
     <h1>売上ランキング</h1>
-    <table>
-        <tr>
-            <th>順位</th><th>商品</th>
-        </tr>
+            <div class="z"><P>順位</p></div> <div class="f"><p>商品</p></div>
         <?php foreach($ranking as $key => $rank):?>
-        <tr>
-            <td><?php echo $key+1;?>位</td>
-            <td><a href="detail.php?id=<?php echo $rank['shohin_id'];?>">
-            <image src="img/<?php echo $rank['image'];?>" alt="商品画像"></a></td>
-        </tr>
-    </table>
+       
+            
+            <p><?php echo $key+1;?>位</p>
+        
+            <a href="detail.php?id=<?php echo $rank['shohin_id'];?>">
+            
+            <image src="img/<?php echo $rank['image'];?>" alt="商品画像"class="g"></a>
     <?php endforeach;?>
-   <?php require 'menu.php';?>
+  
+ </div>
 </body>
 </html>
