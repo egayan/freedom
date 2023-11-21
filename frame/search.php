@@ -44,7 +44,7 @@ if(!isset($_SESSION['customer']['first_login'])){
     $a=$_SESSION['customer']['genre'];
     $sql=$pdo->prepare('select * from eiga where genre LIKE ? ORDER BY RAND() LIMIT 4');
     $sql->execute(["%$a%"]);
-    echo '<div class="osusume"><h3>あなたへのおすすめ</h3><div>';
+    echo '<div class="osusume"><font size=40><b>あなたへのおすすめ</b></font><div>';
     foreach($sql as $row){
         echo '<div class="gazou',$i,'"><img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'"class="san">'.'</a>';
         echo '<br><a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'],"<div>";
