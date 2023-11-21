@@ -34,7 +34,7 @@ if(!isset($_SESSION['customer']['first_login'])){
 </head>
 <body>
     <form action="search-result.php" method="get">
-        <div class="name1"><h3>商品検索</h3><div>
+        <div class="name1"><font size=40><b>商品検索</b></font><div>
     <input type="text" name="keyword" class="kensaku">
     <input type="submit" value="検索" class="kennsabotan">
 </form>

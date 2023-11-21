@@ -4,9 +4,8 @@
 }
 .name1{
     position:  absolute; /* 今の位置を基準 */
-    top: 150px; /* 上から10px */
+    top: 200px; /* 上から10px */
     left: 550px; /* 左から20px */
-    font-size:  40px; /* フォントサイズ調整*/
 }
 
 .kensaku{
