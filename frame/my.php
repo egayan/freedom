@@ -3,6 +3,7 @@ session_start();
 require 'db-conect.php';
 ob_start();
 require 'header.php';
+ require 'menu.php';
 $pdo = new PDO($connect, USER, PASS);
 // ログアウトが押された場合
 if (isset($_GET['logout'])) {
@@ -74,24 +75,23 @@ if(isset($_SESSION['customer'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/my.css">
     <title>マイページ</title>
     <link href="css/my.css" rel="stylesheet">
 </head>
 <body>
     <div class="wrap">
         <p><a href=""><</a></p>
-        <h1>マイページ</h1>
         <form action="" method="post">
             <table>
-                <tr><td>お名前</td><td><input type="text" name="name" value="<?php echo $userinfo['name']; ?>"></td></tr>
-                <tr><td>メールアドレス</td><td><input type="text" name="address" value="<?php echo $userinfo['address']; ?>"></td></tr>
-                <tr><td>電話番号</td><td><input type="text" name="phone" value="<?php echo $userinfo['phone']; ?>"></td></tr>
-                <tr><td>パスワード</td><td><input type="password" name="password" value=""></td></tr>
+                <tr><td><div class="name">お名前<div></td><td><input type="text" class="nametext" name="name" value="<?php echo $userinfo['name']; ?>"></td></tr>
+                <tr><td><div class="meru">メールアドレス<div></td><td><input type="text" class="merutext" name="address" value="<?php echo $userinfo['address']; ?>"></td></tr>
+                <tr><td><div class="denha">電話番号<div></td><td><input type="text" class="denhatext" name="phone" value="<?php echo $userinfo['phone']; ?>"></td></tr>
+                <tr><td><div class="pasu">パスワード<div></td><td><input type="password" class="pasutext" name="password" value=""></td></tr>
             </table>
-            <input type="submit" value="確定">
+            <input type="submit" class="kakusubmit" value="確定">
         </form>
-        <p><a href="my.php?logout=1">ログアウト</a></p>
-        <?php require 'menu.php'; ?>
+        <p><a href="my.php?logout=1" class="rogout">ログアウト</a></p>
     </div>
     <?php ob_end_flush();?>
 </body>

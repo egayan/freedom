@@ -1,0 +1,56 @@
+.name{
+    position: absolute; /* 今の位置を基準 */
+    top: 200px; /* 上から10px */
+    left: 530px; /* 左から20px */
+}
+
+.nametext{
+    position: absolute; /* 今の位置を基準 */
+    top: 200px; /* 上から10px */
+    left: 583px; /* 左から20px */
+}
+
+.meru{
+    position: absolute; /* 今の位置を基準 */
+    top: 250px; /* 上から10px */
+    left: 470px; /* 左から20px */
+}
+.merutext{
+    position: absolute; /* 今の位置を基準 */
+    top: 250px; /* 上から10px */
+    left: 583px; /* 左から20px */
+}
+
+.denha{
+    position: absolute; /* 今の位置を基準 */
+    top: 300px; /* 上から10px */
+    left: 515px; /* 左から20px */
+}
+.denhatext{
+    position: absolute; /* 今の位置を基準 */
+    top: 300px; /* 上から10px */
+    left: 583px; /* 左から20px */
+}
+
+.pasu{
+    position: absolute; /* 今の位置を基準 */
+    top: 350px; /* 上から10px */
+    left: 500px; /* 左から20px */
+}
+.pasutext{
+    position: absolute; /* 今の位置を基準 */
+    top: 350px; /* 上から10px */
+    left: 580px; /* 左から20px */
+}
+
+.kakusubmit{
+    position: absolute; /* 今の位置を基準 */
+    top: 450px; /* 上から10px */
+    left: 700px; /* 左から20px */
+}
+
+.rogout{
+    position: absolute; /* 今の位置を基準 */
+    top: 500px; /* 上から10px */
+    left: 800px; /* 左から20px */
+}
