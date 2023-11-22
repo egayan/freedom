@@ -2,6 +2,7 @@
 session_start();
 ob_start();
 require 'db-conect.php';
+require 'header.php'; 
 $pdo=new PDO($connect,USER,PASS);
 //使用状態の確認
 $stmt=$pdo->prepare("SELECT use_frag FROM customer WHERE client_id=?");
@@ -69,7 +70,6 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="warp">
-<img src="img/rogo.jpg">
     <table>
         <tr>
             <th>商品名</th><th>クーポン</th><th>金額</th>

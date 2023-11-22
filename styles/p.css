@@ -1,0 +1,33 @@
+img{
+    width: 160px;
+    height: 160px;
+}
+
+.wrap {
+    height: 100px;
+    width: 500px;
+
+}
+th,td {
+    border: solid 1px;  /* 枠線指定 */
+    padding: 10px;      /* 余白指定 */
+}
+
+table {
+    border-collapse:  collapse; /* セルの線を重ねる */
+       position: relative; /* 今の位置を基準 */
+    top: 30px; /* 上から10px */
+    left: 260px; /* 左から20px */
+}
+td.none {
+    border: none;
+}
+td.a{
+   text-align:right; 
+}
+.kounyuu{
+    position: relative; /* 今の位置を基準 */
+top: 50px; /* 上から10px */
+left: -50px;
+/* 左から20px */
+}
