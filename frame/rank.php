@@ -32,7 +32,7 @@ $totalRanking = $totalStmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style/rank.css" rel="stylesheet">
+    <link href="styles/rank.css" rel="stylesheet">
     <title>売上ランキング</title>
 </head>
 <body>
@@ -104,7 +104,7 @@ $totalRanking = $totalStmt->fetchAll(PDO::FETCH_ASSOC);
         
             <a href="detail.php?id=<?php echo $rank['shohin_id'];?>">
             
-            <image src="img/<?php echo $rank['image'];?>" alt="商品画像"class="g"></a>
+            <image src="image/<?php echo $rank['image'];?>" alt="商品画像"class="g"></a>
     <?php endforeach;?>
   
  </div>
