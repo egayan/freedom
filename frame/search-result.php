@@ -36,16 +36,21 @@
         $sql->execute(["%$keyword%"]);
 
         echo '<h3>検索結果</h3>';
-        //映画画像の表示
-        foreach($sql as $row){
-            echo '<div class="gazou1">';
-            echo '<img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'">'.'</a>';
-            echo '</div>';
-            echo '<div class="name2">';
-            echo '<a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'];
-            echo '</div>';
+        if($sql->rowCount()>0){
+            //映画画像の表示
+            foreach($sql as $row){
+                echo '<div class="gazou1">';
+                echo '<a href="detail.php?id=',$row['shohin_id'],'">';
+                echo '<img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'"></a>';
+                echo '</div>';
+                echo '<div class="name2">';
+                echo '<a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'];
+                echo '</div>';
+            }
+        }else{
+            echo '<p>お探しの商品はございません</p>';
         }
-        /* for($i=1;$i<=5;$i++){
+            /* for($i=1;$i<=5;$i++){
             echo '<div class="gazou',$i,'">';
             echo '<a href="login.php"><img src="img/rogo.jpg" alt="商品詳細ページへ"  title="rogo"></a>';
             echo '</div>';

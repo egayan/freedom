@@ -5,7 +5,16 @@ require 'db-conect.php';
 $pdo=new PDO($connect,USER,PASS);
 //履歴処理
 $sql=$pdo->prepare('UPDATE customer SET receive_day=CURRENT_TIMESTAMP WHERE client_id=?');
-$receive=$sql->execute([$_SESSION['customer']['client_id']]);
+$sql->execute([$_SESSION['customer']['client_id']]);
+
+// ジャンル情報を取得
+$sql_genre = $pdo->prepare('SELECT g.genre_name FROM customer_genre cg
+                           JOIN genre g ON cg.genre_id = g.genre_id
+                           WHERE cg.client_id = ?');
+$sql_genre->execute([$_SESSION['customer']['client_id']]);
+$customer_genre = $sql_genre->fetch(PDO::FETCH_COLUMN);
+
+//誕生日関連
 if(!isset($_SESSION['customer']['first_login'])){
     $stmt=$pdo->prepare('SELECT MONTH(birthday) FROM customer WHERE client_id=?');
     $stmt->execute([$_SESSION['customer']['client_id']]);
@@ -40,16 +49,22 @@ if(!isset($_SESSION['customer']['first_login'])){
 </form>
 
 <?php
+    // お気に入り
+    $sql_search = $pdo->prepare('SELECT e.* FROM eiga e
+                            JOIN shohin_genre eg ON e.shohin_id = eg.shohin_id
+                            JOIN customer_genre cg ON eg.genre_id = cg.genre_id
+                            WHERE cg.client_id = ? AND e.genre LIKE ?
+                            ORDER BY RAND()
+                            LIMIT 4');
+    $sql_search->execute([$_SESSION['customer']['client_id'], "%$customer_genre%"]);
+    
     $i=1;
-    $a=$_SESSION['customer']['genre'];
-    $sql=$pdo->prepare('select * from eiga where genre LIKE ? ORDER BY RAND() LIMIT 4');
-    $sql->execute(["%$a%"]);
     echo '<div class="osusume"><h3>あなたへのおすすめ</h3><div>';
-    foreach($sql as $row){
-        echo '<div class="gazou',$i,'"><img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'"class="san">'.'</a>';
+    foreach($sql_search as $row){
         echo '<br><a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'],"<div>";
-        $i++;
-        
+        echo '<div class="gazou',$i,'"><img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'"class="san">'.'</a>';
+
+        $i++; 
     }
 ?>
 </body>

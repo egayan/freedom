@@ -96,17 +96,16 @@ $b=count($a);
         if ($count>0) {
             echo 'このメールアドレスは既に使用されています';
             $flag=1;
-        }else{
-            if(empty($phone)){
-                echo '<div class="error3">';
-                echo '<p>','電話番号は必須項目です','</p>';
-                echo '</div>';        
-            }elseif (!preg_match("/^\d{10,11}$/", $phone)) {
-                echo '電話番号は10桁または11桁の数字で入力してください';
-                $flag=1;
-            }
-        }        
+        }
     }
+    if(empty($phone)){
+            echo '<div class="error3">';
+            echo '<p>','電話番号は必須項目です','</p>';
+            echo '</div>';        
+        }elseif (!preg_match("/^\d{10,11}$/", $phone)) {
+            echo '電話番号は10桁または11桁の数字で入力してください';
+            $flag=1;
+        }        
     if(empty($password)){
         echo '<div class="error4">';
         echo '<p>','パスワードは必須項目です','</p>';

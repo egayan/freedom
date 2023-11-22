@@ -100,11 +100,31 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
         <td class="none">
         <div class="kounyuu">
     <form method="post">
-        <input type="submit" value="購入">
+        <input type="submit" value="購入" onclick="purchase()">
         </td>
     </form>
     </table>
-                        </div>
+    </div>
+        <script>
+        function purchase() {
+            // クーポンの選択状態を取得
+            var selectedCoupons = {};
+            var couponElements = document.querySelectorAll('.couponSelect input[type="radio"]');
+            
+            couponElements.forEach(function(element) {
+                var product_id = element.name.match(/\d+/)[0];
+                selectedCoupons[product_id] = element.checked ? element.value : 0;
+            });
+
+            // 選択されたクーポンをフォームに設定
+            Object.keys(selectedCoupons).forEach(function(product_id) {
+                document.querySelector('input[name="coupon[' + product_id + ']"]').value = selectedCoupons[product_id];
+            });
+
+            // フォームを送信
+            document.getElementById('purchaseForm').submit();
+        }
+    </script>
 </body>
 </html>
 <?php ob_end_flush();?>
