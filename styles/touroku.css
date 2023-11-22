@@ -1,203 +1,217 @@
 .red{
     font-size: 15px;  
-    color: #f32121;     /* 文字色指定 */
+    color: #f32121;     /* æ–‡å­—è‰²æŒ‡å®š */
 }
 
-.wrap {
-    height: 100px;
-    width: 500px;
+.namae{/*åå‰*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 10px;/* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
+}
+.name{/*åå‰text*/
+    position: absolute; 
+    top: 30px;
+    left: 500px; 
+     width: 6em;
+      width: 300px;
 }
 
 
-.namae{/*名前*/
-    position: relative; /* 今の位置を基準 */
-    /* 上から10px */
-    left: 300px; /* 左から20px */
-    /*font-size: 40px;  フォントサイズ調整*/
+.me-riadoresu{/* ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 70px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
 }
-.name{/*名前text*/
-    position: relative; /* 今の位置を基準 */
-    /* 上から10px */
-    left: 300px; /* 左から20px */
+.address{/* ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ email */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 90px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+     width: 6em;
+      width: 300px;
+}
+
+
+.denwabangou{/* é›»è©±ç•ªå· */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 130px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
+}
+.phone{/* é›»è©±ç•ªå· tel*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 150px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    width: 6em;
+      width: 300px;
+}
+
+.pasuwa-do{/* ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 190px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
+}
+.password{/* ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ password*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 210px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
     line-height: 1.5;
-     width: 100%;
+    width: 6em;
+    width: 300px;
 }
 
 
-.me-riadoresu{/* メールアドレス */
-    position: relative; /* 今の位置を基準 */
-    top: 30px; /* 上から10px */
-    left: 300px; /* 左から20px */
-    /*font-size: 40px;  フォントサイズ調整*/
+.seinegappi{/*ç”Ÿå¹´æœˆæ—¥ */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 250px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
 }
-.address{/* メールアドレス email */
-    position: relative; /* 今の位置を基準 */
-    top: 30px; /* 上から10px */
-    left: 300px; /* 左から20px */
-    line-height: 1.5;
-     width: 100%;
-}
-
-
-.denwabangou{/* 電話番号 */
-    position: relative; /* 今の位置を基準 */
-    top: 55px; /* 上から10px */
-    left: 300px; /* 左から20px */
-    /*font-size: 40px;  フォントサイズ調整*/
-}
-.phone{/* 電話番号 tel*/
-    position: relative; /* 今の位置を基準 */
-    top: 55px; /* 上から10px */
-    left: 300px; /* 左から20px */
-    line-height: 1.5;
-    width: 100%;
-}
-
-.pasuwa-do{/* パスワード */
-    position: relative; /* 今の位置を基準 */
-    top: 85px; /* 上から10px */
-    left: 300px; /* 左から20px */
-    /*font-size: 40px;  フォントサイズ調整*/
-}
-.password{/* パスワード password*/
-    position: relative; /* 今の位置を基準 */
-    top: 85px; /* 上から10px */
-    left: 300px; /* 左から20px */
-    line-height: 1.5;
-    width: 100%;
+.birthday{/* ç”Ÿå¹´æœˆæ—¥ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 270px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+   width: 6em;
+    width: 300px;
 }
 
 
-.seinegappi{/*生年月日 */
-    position: relative; /* 今の位置を基準 */
-    top: 115px; /* 上から10px */
-    left: 300px; /* 左から20px */
-    /*font-size: 40px;  フォントサイズ調整*/
+.ganru{/*ç”Ÿå¹´æœˆæ—¥ */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 310px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
 }
-.birthday{/* 生年月日 birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: 110px; /* 上から10px */
-    left: 300px; /* 左から20px */
-    line-height: 1.5;
-    width: 100%;
+.zyanru{/* ç”Ÿå¹´æœˆæ—¥ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 0px; /* ä¸Šã‹ã‚‰10px */
+    left: 0px; /* å·¦ã‹ã‚‰20px */
+     width: 6em;
+    width: 300px;
 }
-
-
-.ganru{/*生年月日 */
-    position: relative; /* 今の位置を基準 */
-    top: 150px; /* 上から10px */
-    left: 300px; /* 左から20px */
-    /*font-size: 40px;  フォントサイズ調整*/
-}
-.zyanru{/* 生年月日 birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: 55px; /* 上から10px */
-    left: 200px; /* 左から20px */
-    line-height: 1.5;
-    width: 100%;
-}
-.kategori{/* ジャンル birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: 150px; /* 上から10px */
-    left: 300px; /* 左から20px */
+.kategori{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 350px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
 }
 
-.zyanru6{/* ジャンル birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -140px; /* 上から10px */
-    left: 200px; /* 左から20px */
+.zyanru6{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 0px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+    width: 100px;
    
 }
-.zyanru7{/* ジャンル birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -140px; /* 上から10px */
-    left: 200px; /* 左から20px */
+.zyanru7{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position:absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 100px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+     width: 100px;
 }
-.zyanru8{/* ジャンル birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -140px; /* 上から10px */
-    left: 200px; /* 左から20px */
+.zyanru8{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 25px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+      width: 100px;
    
 }
-.zyanru9{/* ジャンル birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -140px; /* 上から10px */
-    left: 200px; /* 左から20px */
+.zyanru9{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 50px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+      width: 100px;
    
 }
-.zyanru10{/* ジャンル birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -140px; /* 上から10px */
-    left: 200px; /* 左から20px */
+.zyanru10{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 75px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+     width: 100px;
    
 }
-.zyanru11{/* ジャンル birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -140px; /* 上から10px */
-    left: 200px; /* 左から20px */
+.zyanru11{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 120px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+     width: 100px;
    
 }
-.zyanru12{/* ジャンル birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -140px; /* 上から10px */
-   
+.zyanru12{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 145px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; 
+     width: 100px;
+}
+.zyanru13{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position:  absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 167px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+     width: 150px;
    
 }
-.zyanru13{/* ジャンル birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -160px; /* 上から10px */
-    left: 200px; /* 左から20px */
-   
+.zyanru14{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position:  absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 194px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px;
+     width: 100px;
 }
-.zyanru14{/* ジャンル birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -160px; /* 上から10px */
+
+.error1{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: -6px; /* ä¸Šã‹ã‚‰10px */
+    left: 675px; /* å·¦ã‹ã‚‰20px */
+    width: 300px;
+}
+.error2{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 56px; /* ä¸Šã‹ã‚‰10px */
+    left: 630px; /* å·¦ã‹ã‚‰20px */
     
 }
-
-.error1{/* エラー文 birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -620px; /* 上から10px */
-    left: 675px; /* 左から20px */
+.error3{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 115px; /* ä¸Šã‹ã‚‰10px */
+    left: 645px; /* å·¦ã‹ã‚‰20px */
+   
 }
-.error2{/* エラー文 birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -580px; /* 上から10px */
-    left: 600px; /* 左から20px */
+.error4{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 175px; /* ä¸Šã‹ã‚‰10px */
+    left: 625px; /* å·¦ã‹ã‚‰20px */
 }
-.error3{/* エラー文 birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -540px; /* 上から10px */
-    left: 645px; /* 左から20px */
+.error5{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 235px; /* ä¸Šã‹ã‚‰10px */
+    left: 640px; /* å·¦ã‹ã‚‰20px */
 }
-.error4{/* エラー文 birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -500px; /* 上から10px */
-    left: 625px; /* 左から20px */
+.error6{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 295px; /* ä¸Šã‹ã‚‰10px */
+    left: 630px; /* å·¦ã‹ã‚‰20px */
 }
-.error5{/* エラー文 birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -460px; /* 上から10px */
-    left: 640px; /* 左から20px */
+.error7{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 295px; /* ä¸Šã‹ã‚‰10px */
+    left: 630px; /* å·¦ã‹ã‚‰20px */
 }
-.error6{/* エラー文 birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -260px; /* 上から10px */
-    left: 500px; /* 左から20px */
+.error8{/* エラー文 birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 69px; /* ä¸Šã‹ã‚‰10px */
+    left: 630px; /* å·¦ã‹ã‚‰20px */
 }
-.error7{/* エラー文 birthday*/
-    position: relative; /* 今の位置を基準 */
-    top: -260px; /* 上から10px */
-    left: 500px; /* 左から20px */
+.error9{
+   position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 129px; /* ä¸Šã‹ã‚‰10px */
+    left: 570px; /* å·¦ã‹ã‚‰20px */
 }
-
 .sousinn{
-    position: relative; /* 今の位置を基準 */
-    top: 60px; /* 上から10px */
-    left: 500px; /* 左から20px */
+    position:  absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 600px; /* ä¸Šã‹ã‚‰10px */
+    left: 700px; /* å·¦ã‹ã‚‰20px */
 }
 .rog{
-    position: relative; /* 今の位置を基準 */
-    top: -100px; /* 上から10px */
-    left: 700px; /* 左から20px */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 600px; /* ä¸Šã‹ã‚‰10px */
+    left: 950px; /* å·¦ã‹ã‚‰20px */
 }

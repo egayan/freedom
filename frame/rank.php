@@ -32,6 +32,7 @@ $totalRanking = $totalStmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/rank.css" rel="stylesheet">
     <title>売上ランキング</title>
 </head>
 <body>
@@ -91,5 +92,21 @@ $totalRanking = $totalStmt->fetchAll(PDO::FETCH_ASSOC);
         // 最初に週間売上を表示
         showRanking();
     </script>
+<?php require 'menu.php';?>
+ <!-- 画像をクリックしたら詳細画面に飛ぶ -->
+ <div class="warp">
+    <h1>売上ランキング</h1>
+            <div class="z"><P>順位</p></div> <div class="f"><p>商品</p></div>
+        <?php foreach($ranking as $key => $rank):?>
+       
+            
+            <p><?php echo $key+1;?>位</p>
+        
+            <a href="detail.php?id=<?php echo $rank['shohin_id'];?>">
+            
+            <image src="img/<?php echo $rank['image'];?>" alt="商品画像"class="g"></a>
+    <?php endforeach;?>
+  
+ </div>
 </body>
 </html>
