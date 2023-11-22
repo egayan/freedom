@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->execute([$name, $address,$phone,$id]);
             }
             $_SESSION['customer'] = [
-                'id' => $id,
+                'client_id' => $id,
                 'name' => $name,
                 'address' => $address,
                 'phone' => $phone,
@@ -64,10 +64,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo 'メールアドレスがすでに使用されていますので、変更してください。';
     }
 }
+
 // ユーザー情報の取得
-if(isset($_SESSION['customer'])){
-    $userinfo=$_SESSION['customer'];
-}
+$userinfo=$_SESSION['customer'];
+
+// クーポン情報の取得
+$sql_coupon = $pdo->prepare('SELECT c.* FROM customer cu
+                             JOIN coupon c ON c.coupon_id = cu.coupon_id
+                             WHERE cu.client_id = ? AND cu.use_frag = 0');
+$sql_coupon->execute([$_SESSION['customer']['client_id']]);
+$user_coupons = $sql_coupon->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -85,12 +91,22 @@ if(isset($_SESSION['customer'])){
         <form action="" method="post">
             <table>
                 <tr><td><div class="name">お名前<div></td><td><input type="text" class="nametext" name="name" value="<?php echo $userinfo['name']; ?>"></td></tr>
-                <tr><td><div class="meru">メールアドレス<div></td><td><input type="text" class="merutext" name="address" value="<?php echo $userinfo['address']; ?>"></td></tr>
+                <tr><td><div class="meru">メールアドレス<div></td><td><input type="email" class="merutext" name="address" value="<?php echo $userinfo['address']; ?>"></td></tr>
                 <tr><td><div class="denha">電話番号<div></td><td><input type="text" class="denhatext" name="phone" value="<?php echo $userinfo['phone']; ?>"></td></tr>
                 <tr><td><div class="pasu">パスワード<div></td><td><input type="password" class="pasutext" name="password" value=""></td></tr>
             </table>
             <input type="submit" class="kakusubmit" value="確定">
         </form>
+        所持クーポン一覧
+        <?php if (!empty($user_coupons)) : ?>
+            <ul>
+                <?php foreach ($user_coupons as $coupon) : ?>
+                    <li><?php echo $coupon['coupon_name']; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else : ?>
+            <p>クーポンを所持していません。</p>
+        <?php endif; ?>
         <p><a href="my.php?logout=1" class="rogout">ログアウト</a></p>
     </div>
     <?php ob_end_flush();?>
