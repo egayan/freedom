@@ -54,7 +54,7 @@ foreach($cart as $item){
 $stmt->execute([$_SESSION['customer']['client_id']]);
 $items=$stmt->fetchAll(PDO::FETCH_ASSOC); */
 //クーポン一覧取得
-$stmt = $pdo->prepare("SELECT coupon.coupon_id,coupon_name FROM coupon  JOIN customer ON coupon.coupon_id=customer.coupon_id
+$stmt = $pdo->prepare("SELECT coupon.coupon_id,coupon_name,discount_rate FROM coupon  JOIN customer ON coupon.coupon_id=customer.coupon_id
 WHERE customer.client_id=?");
 $stmt->execute([$_SESSION['customer']['client_id']]);
 $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC); 
@@ -65,7 +65,7 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style/p.css" rel="stylesheet">
+    <!-- <link href="style/p.css" rel="stylesheet"> -->
     <title>購入画面</title>
 </head>
 <body>
@@ -84,47 +84,28 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php else :?>
                         <?php foreach($coupons as $coupon):?>
                             <input type='radio' name="coupon[<?php echo $product_id; ?>]" 
-                            value="<?php echo $coupon ['coupon_id']; ?>">
+                            value="<?php echo $coupon ['coupon_id']; ?>" data-discount-rate="<?php echo $coupon['discount_rate']; ?>">
                             <?php echo $coupon['coupon_name'];?>
                         <?php endforeach;?>
                         <input type='radio' name="coupon[<?php echo $product_id; ?>]" 
                         value="0" checked>クーポンを使用しない
                     <?php endif;?>
                 </td>
-                <td><?php echo $item['price']; ?></td>
+                <td data-product-id="<?php echo $product_id; ?>"><?php echo $item['price']; ?></td>
             </tr>
         <?php endforeach; ?>
         <td class="none"></td>
         <td class="a" >合計金額</td>
-        <td ><?php echo $total; ?></td>
-        <td class="none">
+        <td id="totalAmount" ><?php echo $total; ?></td>
+        </tr>
+        </table>
+        </div>
         <div class="kounyuu">
     <form method="post">
-        <input type="submit" value="購入" onclick="purchase()">
-        </td>
+        <input type="submit" value="購入">
     </form>
-    </table>
     </div>
-        <script>
-        function purchase() {
-            // クーポンの選択状態を取得
-            var selectedCoupons = {};
-            var couponElements = document.querySelectorAll('.couponSelect input[type="radio"]');
-            
-            couponElements.forEach(function(element) {
-                var product_id = element.name.match(/\d+/)[0];
-                selectedCoupons[product_id] = element.checked ? element.value : 0;
-            });
-
-            // 選択されたクーポンをフォームに設定
-            Object.keys(selectedCoupons).forEach(function(product_id) {
-                document.querySelector('input[name="coupon[' + product_id + ']"]').value = selectedCoupons[product_id];
-            });
-
-            // フォームを送信
-            document.getElementById('purchaseForm').submit();
-        }
-    </script>
+    <script src="js/purcharse.js"></script>
 </body>
 </html>
 <?php ob_end_flush();?>
