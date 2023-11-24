@@ -118,9 +118,7 @@ $b=count($a);
         echo '</div>';
     }
     if(empty($birthday)){
-        echo '<div class="error5">';
-        echo '<p>','生年月日は必須項目です','</p>';
-        echo '</div>';
+        echo '<p class="error5">','生年月日は必須項目です','</p>';
     }
     if(empty($genre)){
         echo '<div class="error6">';
