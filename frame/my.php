@@ -97,15 +97,17 @@ $user_coupons = $sql_coupon->fetchAll(PDO::FETCH_ASSOC);
             </table>
             <input type="submit" class="kakusubmit" value="確定">
         </form>
-        所持クーポン一覧
+        <p class="kupon">所持クーポン一覧</p>
         <?php if (!empty($user_coupons)) : ?>
             <ul>
                 <?php foreach ($user_coupons as $coupon) : ?>
+                    <div class="kuponlist">
                     <li><?php echo $coupon['coupon_name']; ?></li>
+                    <div>
                 <?php endforeach; ?>
             </ul>
         <?php else : ?>
-            <p>クーポンを所持していません。</p>
+            <p class="kuponno">クーポンを所持していません。</p>
         <?php endif; ?>
         <p><a href="my.php?logout=1" class="rogout">ログアウト</a></p>
     </div>
