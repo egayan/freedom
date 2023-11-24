@@ -1,0 +1,28 @@
+.review{
+    position: relative;
+    left: 600px;
+}
+.review3{
+    position: relative;
+    left: 500px;
+    bottom: 50px;
+}
+.review1{
+    position: relative;
+    left: 250px;
+    bottom: 2px;
+}
+.review2{
+    position: relative;
+    left: 390px;
+    bottom: 25px;
+}
+.heder{
+    background-color: cyan;
+}
+.back{
+    position: relative;
+    font-size: 250%;
+    bottom: 40px;
+        
+    }
