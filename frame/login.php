@@ -56,8 +56,7 @@ if(isset($message)){
 
    <input type="submit" value="新規登録の方はこちら"  class="sinki">
    </form>
-   
-
+   <a href=admin.php>管理者の方はこちら</a>
 </body>
 </html>
 <?php ob_end_flush();?>
