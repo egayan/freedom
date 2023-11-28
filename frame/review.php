@@ -38,10 +38,6 @@ $total_pages=ceil($total_reviews/10);
     <img src="../img/sinki.jpg">
     <?php require 'menu.php';?>
 </div>
-    <div class="back">
-    <p><a href=""><</a></p>
-
-</div>
 <div class="review1">
 <h1>レビュー</h1>
 </div>

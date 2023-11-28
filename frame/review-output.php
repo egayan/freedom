@@ -30,9 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <img src="../img/sinki.jpg">
     <?php require 'menu.php';?>
 </div>
-    <div class="back">
-    <p><a href=""><</a></p>
-</div>
 </head>
 <body>
     <div class="review">
