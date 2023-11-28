@@ -67,9 +67,9 @@ if(!isset($_SESSION['customer']['first_login'])){
    
     }
     foreach($sql as $row){
-        echo '<br><a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'],"<div>";
         echo '<div class="gazou',$i,'"><img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'"class="san">'.'</a>';
-
+        echo '<br><a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'],"<div>";
+        
         $i++; 
     }
 ?>
