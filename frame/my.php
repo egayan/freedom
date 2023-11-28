@@ -87,7 +87,6 @@ $user_coupons = $sql_coupon->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="wrap">
-        <p><a href=""><</a></p>
         <form action="" method="post">
             <table>
                 <tr><td><div class="name">お名前<div></td><td><input type="text" class="nametext" name="name" value="<?php echo $userinfo['name']; ?>"></td></tr>
