@@ -18,7 +18,8 @@ function handleCouponClick(productId, selectedCouponId) {
     
     // 金額を計算
     var newTotalAmount = calculateTotalAmount(productId, discountRate);
-    
+    //各商品の価格
+    document.getElementById('totalAmountCell' + productId).innerText = newTotalAmount;
     // 変更後の価格を足し合わせて合計金額を更新
     document.getElementById('totalAmount').innerText = updateTotalAmount(productId, addOriginalAndNewPrice(productId, newTotalAmount));
     

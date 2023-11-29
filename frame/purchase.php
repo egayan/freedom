@@ -31,17 +31,17 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             //購入処理
             $stmt = $pdo->prepare("INSERT INTO purchase(shohin_id, client_id, amount_spent) VALUES (?, ?, ?)");
             $stmt->execute([$product_id,$_SESSION['customer']['client_id'], $new_price]);
-            //クーポンの所有情報を更新 あとで戻せ
-            // $stmt=$pdo->prepare("UPDATE customer SET use_frag=1 WHERE client_id=?");
-            // $stmt->execute([$_SESSION['customer']['client_id']]);
+            //クーポンの所有情報を更新 
+            $stmt=$pdo->prepare("UPDATE customer SET use_frag=1 WHERE client_id=?");
+            $stmt->execute([$_SESSION['customer']['client_id']]);
         }else{
             $stmt = $pdo->prepare("INSERT INTO purchase(shohin_id, client_id, amount_spent) VALUES (?, ?, ?)");
             $stmt->execute([$product_id,$_SESSION['customer']['client_id'], $product['price']]);
         }
     }
-    // unset($_SESSION['movie']);
-    // header('Location: my.php');
-    // exit;
+    unset($_SESSION['movie']);
+    header('Location: my.php');
+    exit;
 }
 $cart=$_SESSION['movie'];
 $total=0;
@@ -92,9 +92,7 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                     <?php endif;?>
                 </td>
-                <td data-product-id="<?php echo $product_id; ?>">
-                    <?php echo $use_frag == 1 ? $item['price'] : calculateTotalAmount($product_id, 0); ?>
-                </td>
+                <td id="totalAmountCell<?php echo $product_id; ?>"><?php echo $item['price']; ?></td>
             </tr>
         <?php endforeach; ?>
         <td class="none"></td>
