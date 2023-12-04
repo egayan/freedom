@@ -20,7 +20,10 @@ if(!isset($_SESSION['customer']['first_login'])){
     $stmt->execute([$_SESSION['customer']['client_id']]);
     $birthday_month=$stmt->fetch(PDO::FETCH_COLUMN);
     $month=date('n');
-    
+    //最後の日付
+    $stmt = $pdo->prepare('SELECT MONTH(receive_day) FROM customer WHERE client_id=?');
+    $stmt->execute([$_SESSION['customer']['client_id']]);
+    $lastMonth=$stmt->fetch(PDO::FETCH_COLUMN);
     if($month==$birthday_month){
         $coupon=1;
     }else{
@@ -28,9 +31,15 @@ if(!isset($_SESSION['customer']['first_login'])){
     }
     $last_day=date('Y-m-t H:i:s');
     $_SESSION['customer']['first_login']=true;
+    if($lastMonth!=$last_day){
     //更新処理
-    $sql=$pdo->prepare('UPDATE customer SET coupon_id=?,date_expiry=? WHERE client_id=?');
+    $sql=$pdo->prepare('UPDATE customer SET coupon_id=?,date_expiry=?,use_frag=0 WHERE client_id=?');
     $sql->execute([$coupon,$last_day,$_SESSION['customer']['client_id']]);
+    }
+//     // クーポン情報をデータベースから取得
+// $stmt = $pdo->prepare('SELECT coupon_name FROM coupon WHERE coupon_id = ?');
+// $stmt->execute([$coupon]);
+// $couponInfo = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 ?>
 <link rel="stylesheet" href="styles/search.css">
@@ -67,9 +76,8 @@ if(!isset($_SESSION['customer']['first_login'])){
    
     }
     foreach($sql as $row){
-        echo '<div class="gazou',$i,'"><img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'"class="san">'.'</a>';
         echo '<br><a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'],"<div>";
-        
+        echo '<div class="gazou',$i,'"><img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'"class="san">'.'</a>';
         $i++; 
     }
 ?>

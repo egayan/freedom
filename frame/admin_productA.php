@@ -12,18 +12,18 @@
 </head>
 <body>
     <div class="c">
-        <form action="admin.php" method="post" onsubmit="return validateForm()">
+        <form action="admin.php" method="post">
             <h1>商品登録画面</h1>
             商品名<br>
-            <input type="text"  name="shohin_mei" size="50" required><br>
+            <input type="text"  name="shohin_mei" size="50"><br>
             商品説明<br>
-            <input type="text"  name="explanation" size="50" required><br>
+            <input type="text"  name="explanation" size="50"><br>
             単価<br>
-            <input type="text"  name="price" size="50" required><br>
+            <input type="text"  name="price" size="50"><br>
             画像<br>
-            <input type="text"  name="image" size="50" required><br>
+            <input type="text"  name="image" size="50"><br>
             時間<br>
-            <input type="text"  name="time" size="50" required><br>
+            <input type="text"  name="time" size="50"><br>
             ジャンル<br>
             <?php
             foreach ($sql as $genre) {
@@ -31,13 +31,13 @@
             }
             ?>
             PV<br>
-            <input type="text"  name="pv" size="50" required><br>
+            <input type="text"  name="pv" size="50"><br>
             <button type="submit" name="insert">登録</button>
             
-        </form>
+            </form>
         <form action="admin.php" method="post">
-            <button type="submit">戻る</button>
-        </form>
+        <button type="submit">戻る</button>
+    </form>
     </div>
     <script src="js/admin_product.js"></script>
 </body>
