@@ -3,7 +3,7 @@ session_start();
 require 'db-conect.php';
 ob_start();
 require 'header.php';
- require 'menu.php';
+require 'menu.php';
 $pdo = new PDO($connect, USER, PASS);
 // ログアウトが押された場合
 if (isset($_GET['logout'])) {
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // アドレスが重複していない場合は更新
         if ($id) {
             // 更新
-            if(!empty($pqwwword)){
+            if(!empty($password)){
                 //空欄でないなら更新
                 $stmt = $pdo->prepare('UPDATE customer SET name=?, address=?,phone=?,password=? WHERE client_id=?');
                 $stmt->execute([$name, $address,$phone,password_hash($password, PASSWORD_DEFAULT), $id]);    
