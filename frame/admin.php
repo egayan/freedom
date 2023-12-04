@@ -73,7 +73,7 @@
 <body>
     <div class="c">
         <h1>商品一覧画面</h1>
-        <table>  
+        <table border="1" >  
         <tr>
                 <th>ID</th>
                 <th>商品名</th>
@@ -119,7 +119,7 @@
             </form>
                 <?php                
                 echo '</td>';
-                echo '</tr>';
+                echo '</tr>'; 
                 echo "\n";
             }
             ?>
