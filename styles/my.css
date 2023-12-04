@@ -44,14 +44,14 @@
 }
 
 .kakusubmit{
-    position: relative; /* 今の位置を基準 */
-    top: 200px; /* 上から10px */
+    position: absolute; /* 今の位置を基準 */
+    top: 450px; /* 上から10px */
     left: 700px; /* 左から20px */
 }
 
 .rogout{
-    position: relative; /* 今の位置を基準 */
-    top: 200px; /* 上から10px */
+    position: absolute; /* 今の位置を基準 */
+    top: 500px; /* 上から10px */
     left: 800px; /* 左から20px */
 }
 
@@ -63,15 +63,14 @@
 }
 
 .kuponlist{
-    position: relative; /* 今の位置を基準 */
-    top: 120px; /* 上から10px */
-    left: 570px; /* 左から20px */
+    position: absolute; /* 今の位置を基準 */
+    top: 396px; /* 上から10px */
+    left: 620px; /* 左から20px */
      width: 250px;
 }
-
 .kuponno{
-    position: relative; /* 今の位置を基準 */
-    top: 120px; /* 上から10px */
-    left: 570px; /* 左から20px */
-    width: 230px;
+    position: absolute; /* 今の位置を基準 */
+    top:392px; /* 上から10px */
+    left: 585px; /* 左から20px */
+     width: 250px;
 }

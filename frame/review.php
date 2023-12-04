@@ -30,17 +30,22 @@ $total_pages=ceil($total_reviews/10);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $movie['shohin_mei'] ; ?>レビュー</title>
+    <link href="../styles/review.css" rel="stylesheet">
+        <title><?php echo $movie['shohin_mei'] ; ?>レビュー</title>
 </head>
 <body>
-    <img src="img/rogo.jpg">
-    <p><a href=""><</a></p>
- <img src="image/<?php echo $movie['image']; ?>" alt="<?php echo $movie['shohin_id']; ?>">
+<div class="heder">
+    <img src="../img/sinki.jpg">
+    <?php require 'menu.php';?>
+</div>
+<div class="review1">
+<h1>レビュー</h1>
+</div>
  <?php if(count($reviews)>0):?>
     <?php foreach($reviews as $review):?>
         <div class="review">
-                <p>投稿者: <?php echo $review['name']; ?></p>
-                <p>評価(☆): <?php echo $review['star']; ?>/5</p>
+                評価(☆): <?php echo $review['star']; ?>/5
+                投稿者: <?php echo $review['name']; ?>
                 <p>レビュー: <?php echo $review['comment']; ?></p>
             </div>
         <?php endforeach; ?>
@@ -59,9 +64,9 @@ $total_pages=ceil($total_reviews/10);
         <?php endif; ?>
         <form action="review-output.php" method="get">
             <input type="hidden" name="shohin_id" value="<?php echo $movie['shohin_id']; ?>">
-            <input type="submit" value="レビューを書く">
+            <div class="submit">
+            <input type="submit" style="width: auto;padding:20px;font-size:20px;background: red;" value="レビューを書く"></div>
         </form>
     </div>
-<?php require 'menu.php';?>
 </body>
 </html>

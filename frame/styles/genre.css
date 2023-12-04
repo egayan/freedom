@@ -1,0 +1,65 @@
+.image{
+    width: 160px;
+    height: 160px;
+}
+
+.h2{
+    font-size: 18px;
+}
+
+.Container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.Box-Container {
+  display: flex;
+  width: fit-content;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.sum{
+  width: 220px;
+  height:  300px;
+}
+.Box{
+  flex-shrink: 0;
+  width: 220px;
+  height:  300px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #ccc;
+}
+
+.Arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.Arrow.left {
+  left: 0;
+}
+
+.Arrow.right {
+  right: 0;
+}
+
+.Hide {
+  display: none;
+}
+.Box-Container {
+  overflow-x: auto;
+  white-space: nowrap;
+}

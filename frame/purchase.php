@@ -10,7 +10,7 @@ $stmt->execute([$_SESSION['customer']['client_id']]);
 $use_frag=$stmt->fetchColumn();
 if($_SERVER['REQUEST_METHOD']=='POST'){
     foreach($_SESSION['movie'] as $product_id => $product){
-        //使用状態の確認
+        //所持状態の確認
         $stmt=$pdo->prepare("SELECT use_frag FROM customer WHERE client_id=?");
         $stmt->execute([$_SESSION['customer']['client_id']]);
         $use_frag=$stmt->fetchColumn(); 
@@ -21,17 +21,17 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             $coupon_id=0;
         }
         //クーポン有の処理
-        if($use_frag==0){
+        if($use_frag==0&&$coupon_id!=0){
             //割引率
             $stmt=$pdo->prepare("SELECT discount_rate FROM coupon WHERE coupon_id=?");
             $stmt->execute([$coupon_id]);
             $discount_rate=$stmt->fetchColumn();
             //価格の更新
-            $new_price=$product['price']*$discount_rate;
+            $new_price=$product['price']*(1-$discount_rate);
             //購入処理
             $stmt = $pdo->prepare("INSERT INTO purchase(shohin_id, client_id, amount_spent) VALUES (?, ?, ?)");
             $stmt->execute([$product_id,$_SESSION['customer']['client_id'], $new_price]);
-            //クーポンの所有情報を更新
+            //クーポンの所有情報を更新 
             $stmt=$pdo->prepare("UPDATE customer SET use_frag=1 WHERE client_id=?");
             $stmt->execute([$_SESSION['customer']['client_id']]);
         }else{
@@ -48,11 +48,7 @@ $total=0;
 foreach($cart as $item){
     $total+=$item['price'];
 }
-//購入済み一覧取得
-/* $stmt = $pdo->prepare("SELECT shohin_id,shohin_mei FROM purchase INNER JOIN eiga ON purchase.shohin_id=eiga.shohin_id
-                        WHERE purchase.client_id=?");
-$stmt->execute([$_SESSION['customer']['client_id']]);
-$items=$stmt->fetchAll(PDO::FETCH_ASSOC); */
+
 //クーポン一覧取得
 $stmt = $pdo->prepare("SELECT coupon.coupon_id,coupon_name,discount_rate FROM coupon  JOIN customer ON coupon.coupon_id=customer.coupon_id
 WHERE customer.client_id=?");
@@ -74,6 +70,7 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
         <tr>
             <th>商品名</th><th>クーポン</th><th>金額</th>
         </tr>
+        <form method="post">
         <?php foreach($cart as $product_id=>$item):?>
             <tr>
                 <td><?php echo $item['name'];?></td>
@@ -82,16 +79,20 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
                         <input type='hidden' name="coupon[<?php echo $product_id; ?>]" 
                         value="0" checked>クーポンなし
                     <?php else :?>
+                        <div class="coupon-options" id="couponOptions<?php echo $product_id; ?>">
                         <?php foreach($coupons as $coupon):?>
                             <input type='radio' name="coupon[<?php echo $product_id; ?>]" 
-                            value="<?php echo $coupon ['coupon_id']; ?>" data-discount-rate="<?php echo $coupon['discount_rate']; ?>">
+                            value="<?php echo $coupon['coupon_id']; ?>" data-discount-rate="<?php echo $coupon['discount_rate']; ?>"
+                            onclick="handleCouponClick(<?php echo $product_id; ?>,1)">
                             <?php echo $coupon['coupon_name'];?>
                         <?php endforeach;?>
                         <input type='radio' name="coupon[<?php echo $product_id; ?>]" 
-                        value="0" checked>クーポンを使用しない
+                        value="0" onclick="handleCouponClick(<?php echo $product_id; ?>,'0')"
+                        checked>クーポンを使用しない
+                        </div>
                     <?php endif;?>
                 </td>
-                <td data-product-id="<?php echo $product_id; ?>"><?php echo $item['price']; ?></td>
+                <td id="totalAmountCell<?php echo $product_id; ?>"><?php echo $item['price']; ?></td>
             </tr>
         <?php endforeach; ?>
         <td class="none"></td>
@@ -101,11 +102,16 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
         </table>
         </div>
         <div class="kounyuu">
-    <form method="post">
         <input type="submit" value="購入">
     </form>
     </div>
-    <script src="js/purcharse.js"></script>
+    <script src="js/purchase.js"></script>
+    <script>
+        var originalPrices = {};
+        <?php foreach($cart as $product_id => $item): ?>
+        originalPrices[<?php echo $product_id;?>] = <?php echo $item['price']; ?>;
+        <?php endforeach; ?>
+    </script>
 </body>
 </html>
 <?php ob_end_flush();?>
