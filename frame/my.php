@@ -108,7 +108,6 @@ $user_coupons = $sql_coupon->fetchAll(PDO::FETCH_ASSOC);
         <?php else : ?>
             <p class="kuponno">クーポンを所持していません。</p>
         <?php endif; ?>
-        <p><a href="my.php?logout=1" class="rogout">ログアウト</a></p>
     </div>
     <?php ob_end_flush();?>
 </body>
