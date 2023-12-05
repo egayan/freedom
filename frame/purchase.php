@@ -67,6 +67,9 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <div class="warp">
     <table>
+    <form action="cart-insert.php" method="get">
+        <div class="rog">
+        <button type="submit">ひとつ前に戻る</button><div>
         <tr>
             <th>商品名</th><th>クーポン</th><th>金額</th>
         </tr>
