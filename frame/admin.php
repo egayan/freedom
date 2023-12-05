@@ -71,8 +71,11 @@
     </style>
 </head>
 <body>
-    <div class="c">
         <h1>商品一覧画面</h1>
+        <form action="admin_product.php" method="post">
+            <button type="submit">新規登録</button></form>
+            <a href="login.php"  style="margin-left:1200px">ログアウト</a>
+            <div class="c">
         <table border="1" >  
         <tr>
                 <th>ID</th>
@@ -126,12 +129,8 @@
                 </td>
             </tr>
         </table>
-        <form action="admin_product.php" method="post">
-            <button type="submit">新規登録</button>
-        </form>
     </div>
         <!-- ログアウトリンク -->
-        <a href="login.php">ログアウト</a>
     </div>
     <script src="js/admin.js"></script>
 </body>
