@@ -39,8 +39,10 @@ $total_pages=ceil($total_reviews/10);
     <?php require 'menu.php';?>
     <form action="detail.php" method="get">
         <div class="rog">
+        <input type="hidden" name="id" value="<?php echo $movie['shohin_id']; ?>">
         <button type="submit">ひとつ前に戻る</button><div>
 </div>
+</form>
 <div class="review1">
 <h1>レビュー</h1>
 </div>
