@@ -1,19 +1,23 @@
+img{
+  width: 160px;
+  height: 160px;
+}
+
 .wrap {
   height: 100px;
   width: 500px;
 
 }
-.a img{
-  width: 160px;
-  height: 200px;
-}
+
 li {
   list-style: none;
   display: inline-block;
 }
 table{
-  position: relative; /* 今の位置を基準 */
-  top: 30px; /* 上から10px */
-  left: 60px; /* 左から20px */
+        table-layout: fixed;
+      width: 90%;
+position: relative; /* 今の位置を基準 */
+top: 30px; /* 上から10px */
+left: 100px; /* 左から20px */
 }
 

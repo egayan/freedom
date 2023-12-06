@@ -1,1 +1,1 @@
-<img src="img/sinki.jpg" weight=160px height= 160px; >
+<a href="search.php"><img src="img/sinki.jpg" weight=160px height= 160px;></a>

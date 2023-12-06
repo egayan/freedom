@@ -49,12 +49,6 @@
     left: 700px; /* 左から20px */
 }
 
-.rogout{
-    position: absolute; /* 今の位置を基準 */
-    top: 500px; /* 上から10px */
-    left: 800px; /* 左から20px */
-}
-
 .kupon{
     position: absolute; /* 今の位置を基準 */
     top: 380px; /* 上から10px */
