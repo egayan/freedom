@@ -37,6 +37,7 @@ $total_pages=ceil($total_reviews/10);
 <div class="heder">
     <img src="../img/sinki.jpg">
     <?php require 'menu.php';?>
+    </div>
     <form action="detail.php" method="get">
         <div class="rog">
         <input type="hidden" name="id" value="<?php echo $movie['shohin_id']; ?>">

@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="heder">
     <img src="../img/sinki.jpg">
 <?php require 'menu.php';?>
+</div>
 <form action="review.php" method="get">
         <div class="rog">
         <button type="submit">ひとつ前に戻る</button><div>
-</div>
 </head>
 <body>
     <div class="review">
