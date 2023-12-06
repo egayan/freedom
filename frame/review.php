@@ -37,10 +37,11 @@ $total_pages=ceil($total_reviews/10);
 <div class="heder">
     <img src="../img/sinki.jpg">
     <?php require 'menu.php';?>
+    </div>
     <form action="detail.php" method="get">
         <div class="rog">
         <button type="submit">ひとつ前に戻る</button><div>
-</div>
+</head>
 <div class="review1">
 <h1>レビュー</h1>
 </div>
