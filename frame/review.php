@@ -69,9 +69,9 @@ $total_pages=ceil($total_reviews/10);
             <a href="review.php?shohin_id=<?php echo $movie_id; ?>&page=<?php echo ($page + 1); ?>">次のページ</a>
         <?php endif; ?>
         <form action="review-output.php" method="get">
+            <div class ="review">
             <input type="hidden" name="shohin_id" value="<?php echo $movie['shohin_id']; ?>">
-            <div class="submit">
-            <input type="submit" style="width: auto;padding:20px;font-size:20px;background: red;" value="レビューを書く"></div>
+            <input type="submit"  value="レビューを書く"></div>
         </form>
     </div>
 </body>
