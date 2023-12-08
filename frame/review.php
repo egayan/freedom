@@ -30,7 +30,7 @@ $total_pages=ceil($total_reviews/10);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../styles/review.css" rel="stylesheet">
+    <link href="styles/review.css" rel="stylesheet">
         <title><?php echo $movie['shohin_mei'] ; ?>レビュー</title>
 </head>
 <body>
