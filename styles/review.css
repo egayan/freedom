@@ -9,10 +9,12 @@ img{
     margin-left: auto;
     margin-right: auto;
 }
-.submit{
+.review2{
     position: relative;
-    left: 500px;
-    bottom: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 600px;
+    bottom: 200px;
 }
 .review1{
     position: relative;
