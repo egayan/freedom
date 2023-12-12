@@ -83,7 +83,7 @@ $user_coupons = $sql_coupon->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/my.css">
     <title>マイページ</title>
-    <link href="css/my.css" rel="stylesheet">
+    <link href="styles/my.css" rel="stylesheet">
 </head>
 <body>
     <div class="wrap">

@@ -14,6 +14,7 @@ $stmt = $pdo->prepare("SELECT COUNT(*) FROM purchase WHERE shohin_id = ? AND cli
 $stmt->execute([$move_id, $customer_id]);
 $purchase = $stmt->fetchColumn();
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>

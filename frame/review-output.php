@@ -1,7 +1,8 @@
 <?php
 session_start();
 require 'db-conect.php';
-
+require 'header.php';
+require 'menu.php';
 // レビュー投稿処理
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $shohin_id = $_POST['shohin_id'];
@@ -23,12 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../styles/review-output.css" rel="stylesheet">
+    <link href="styles/review-output.css" rel="stylesheet">
     <title>レビュー投稿</title>
 <body>
-<div class="heder">
-    <img src="../img/sinki.jpg">
-<?php require 'menu.php';?>
 </div>
 <form action="review.php" method="get">
         <div class="rog">

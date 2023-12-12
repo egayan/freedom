@@ -1,0 +1,86 @@
+.san{
+    width: 300px;
+    height: 400px;
+}
+.name1{
+    position:  absolute; /* 今の位置を基準 */
+    top: 200px; /* 上から10px */
+    left: 550px; /* 左から20px */
+}
+
+.kensaku{
+    position: absolute; /* 今の位置を基準 */
+    top: 120px; /* 上から10px */
+    left: -270px; /* 左から20px */
+     width:725px ;
+}
+.kennsabotan{
+    position: absolute; /* 今の位置を基準 */
+    top: 120px; /* 上から10px */
+    left: 455px; /* 左から20px */
+    width: 6em;
+    height:1.6em;
+}
+.osusume {
+    position: absolute; /* 今の位置を基準 */
+    top: 150px; /* 上から10px */
+    left: -80px; /* 左から20px */
+ height: 100%;
+  width: 790px;
+}
+
+.gazou1{
+    position:absolute; /* 今の位置を基準 */
+    top: 120px; /* 上から10px */
+    left: -425px; /* 左から20px */
+    width: 310px;
+}
+
+.gazou2{
+    position: absolute; /* 今の位置を基準 */
+    top: 1px; /* 上から10px */
+    left: 330px; /* 左から20px */
+     width: 310px;
+}
+
+.gazou3{
+    position: absolute; /* 今の位置を基準 */
+    top: 1px; /* 上から10px */
+    left: 330px; /* 左から20px */
+}
+
+.gazou4{
+    position: absolute; /* 今の位置を基準 */
+    top: 1px; /* 上から10px */
+    left: 330px; /* 左から20px */
+}
+.gazouname1{
+     position:absolute; /* 今の位置を基準 */
+    top: 510px; /* 上から10px */
+    left: -425px; /* 左から20px */
+    font-size:  20px;
+    width: 310px;
+}
+.gazouname2{
+     position:absolute; /* 今の位置を基準 */
+    top: 390px; /* 上から10px */
+    left: 330px; /* 左から20px */
+    font-size:  20px;
+    width: 310px;
+}
+.gazouname3{
+     position:absolute; /* 今の位置を基準 */
+    top: 390px; /* 上から10px */
+    left: 330px; /* 左から20px */
+    font-size:  20px;
+    width: 310px;
+}
+.gazouname4{
+     position:absolute; /* 今の位置を基準 */
+    top: 390px; /* 上から10px */
+    left: 330px; /* 左から20px */
+    font-size:  20px;
+    width: 310px;
+}
+/*  ↓ nenu.php のCSS */
+

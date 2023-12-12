@@ -6,29 +6,49 @@
 .g{
     position: relative; /* 今の位置を基準 */
     top: 30px; /* 上から10px */
-    left: 500px; /* 左から20px */
+    left: 120px; /* 左から20px */
     font-size:  20px; /* フォントサイズ調整*/
     width: 300px;
     height: 400px;
 }
-p{
-     position: relative; /* 今の位置を基準 */
-    top: 100px; /* 上から10px */
-    left: 300px; /* 左から20px */
-    font-size:  20px; /* フォントサイズ調整*/
 
-}
-.z{
+.ranking{
      position: relative; /* 今の位置を基準 */
     top: 0px; /* 上から10px */
-    left: 0px; /* 左から20px */
-    font-size:  20px; /* フォントサイズ調整*/
+    left: -115px; /* 左から20px */
+    font-size:  30px; /* フォントサイズ調整*/
 
 }
-.f{
+.shohin{
      position: relative; /* 今の位置を基準 */
+    top: 0px; /* 上から10px */
+    left: 100px; /* 左から20px */
+    font-size:  30px; /* フォントサイズ調整*/
+
+}
+.toggleButton{
+    position: relative; /* 今の位置を基準 */
     top: -50px; /* 上から10px */
     left: 300px; /* 左から20px */
-    font-size:  20px; /* フォントサイズ調整*/
+    font-size: 20px; /* フォントサイズ調整*/
+
+}
+.rank{
+    position: relative; /* 今の位置を基準 */
+    top: -120px; /* 上から10px */
+    left: -100px; /* 左から20px */
+    font-size: 30px; /* フォントサイズ調整*/
+}
+.button{
+    position: relative; /* 今の位置を基準 */
+    top: 20px; /* 上から10px */
+    left: 450px; /* 左から20px */
+    font-size: 20px; /* フォントサイズ調整*/
+}
+.title{
+    position: relative; /* 今の位置を基準 */
+    top: 0px; /* 上から10px */
+    left: 600px; /* 左から20px */
+    font-size: 20px; /* フォントサイズ調整*/
 
 }

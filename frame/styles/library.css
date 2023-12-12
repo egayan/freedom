@@ -1,0 +1,28 @@
+img{
+  width: 160px;
+  height: 160px;
+}
+
+.movie {
+  height: 400px;
+  width: 300px;
+
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+table{
+        table-layout: fixed;
+      width: 90%;
+position: relative; /* 今の位置を基準 */
+top: 30px; /* 上から10px */
+left: 100px; /* 左から20px */
+}
+
+h1{
+  top: 0px; /* 上から10px */
+  left: 600px; /* 左から20px */
+  font-size: 30px; /* フォントサイズ調整*/
+}

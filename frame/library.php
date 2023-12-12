@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php require 'db-conect.php'; ?>
 <?php require 'header.php'; ?>
+<?php require 'menu.php';?>
 <?php
 $pdo=new PDO($connect,USER,PASS);
 // データベースから購入履歴を取得
@@ -17,12 +18,11 @@ $purchase = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/libraly.css" rel="stylesheet">
+    <link href="styles/library.css" rel="stylesheet">
     <title>購入映画</title>
 </head>
 <body>
     <div class="warp">
-    <?php require 'menu.php';?>
     <h1>ライブラリ</h1>
     <?php
     echo '<table>';
@@ -35,7 +35,7 @@ foreach ($purchase as $item) {
     echo '<td>';
     echo '<div class="a">';
     echo '<li>';
-    echo '<img src=image/'.$item['image'].' alt="'.$item['shohin_mei'].'">';
+    echo '<img class="movie" src=image/'.$item['image'].' alt="'.$item['shohin_mei'].'">';
     echo '<p>動画名: '.$item['shohin_mei'].'</p>';
     // 画像にリンクを設定する
     echo '<a href="'.$item['pv'].'"target="_blank">動画を見る</a>';
