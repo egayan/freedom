@@ -25,9 +25,9 @@ td.none {
 td.a{
    text-align:right; 
 }
-.kounyuu{
+.submit{
     position: relative; /* 今の位置を基準 */
-top: 50px; /* 上から10px */
-left: -50px;
+top: 40px; /* 上から10px */
+left: 875px;
 /* 左から20px */
 }

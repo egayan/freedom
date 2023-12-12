@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const boxContainer = container.querySelector('.Box-Container');
         const leftArrow = container.querySelector('.Arrow.left');
         const rightArrow = container.querySelector('.Arrow.right');
-        const scrollAmount = 200;
+        const scrollAmount = 1400;
 
         leftArrow.addEventListener('click', function () {
             scroll(boxContainer, -1);
