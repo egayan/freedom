@@ -3,16 +3,6 @@ require 'header.php';
 require 'menu.php';
 require 'db-conect.php';
 $pdo=new PDO($connect,USER,PASS);
-//履歴処理
-$sql=$pdo->prepare('UPDATE customer SET receive_day=CURRENT_TIMESTAMP WHERE client_id=?');
-$sql->execute([$_SESSION['customer']['client_id']]);
-
-// ジャンル情報を取得
-$sql_genre = $pdo->prepare('SELECT g.genre_name FROM customer_genre cg
-                           JOIN genre g ON cg.genre_id = g.genre_id
-                           WHERE cg.client_id = ?');
-$sql_genre->execute([$_SESSION['customer']['client_id']]);
-$customer_genre = $sql_genre->fetch(PDO::FETCH_COLUMN);
 
 //誕生日関連
 if(!isset($_SESSION['customer']['first_login'])){
@@ -31,16 +21,30 @@ if(!isset($_SESSION['customer']['first_login'])){
     }
     $last_day=date('Y-m-t H:i:s');
     $_SESSION['customer']['first_login']=true;
-    if($lastMonth!=$last_day){
+    if($lastMonth!=$month){
     //更新処理
     $sql=$pdo->prepare('UPDATE customer SET coupon_id=?,date_expiry=?,use_frag=0 WHERE client_id=?');
     $sql->execute([$coupon,$last_day,$_SESSION['customer']['client_id']]);
+    echo '<script>';
+    echo 'window.onload = function() {'; // ページの読み込み後に実行
+    echo '  alert("クーポンを取得しました！");'; // アラートポップアップ表示
+    echo '}';
+    echo '</script>';
     }
 //     // クーポン情報をデータベースから取得
 // $stmt = $pdo->prepare('SELECT coupon_name FROM coupon WHERE coupon_id = ?');
 // $stmt->execute([$coupon]);
 // $couponInfo = $stmt->fetch(PDO::FETCH_ASSOC);
 }
+//履歴処理
+$sql=$pdo->prepare('UPDATE customer SET receive_day=CURRENT_TIMESTAMP WHERE client_id=?');
+$sql->execute([$_SESSION['customer']['client_id']]);
+// ジャンル情報を取得
+$sql_genre = $pdo->prepare('SELECT g.genre_name FROM customer_genre cg
+                           JOIN genre g ON cg.genre_id = g.genre_id
+                           WHERE cg.client_id = ?');
+$sql_genre->execute([$_SESSION['customer']['client_id']]);
+$customer_genre = $sql_genre->fetch(PDO::FETCH_COLUMN);
 ?>
 <link rel="stylesheet" href="styles/search.css">
 <!DOCTYPE html>

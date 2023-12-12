@@ -4,7 +4,7 @@
 <?php
 $pdo=new PDO($connect,USER,PASS);
 // データベースから購入履歴を取得
-$stmt = $pdo->prepare('SELECT c.client_id, c.name, e.image, e.shohin_mei, e.pv FROM purchase pur
+$stmt = $pdo->prepare('SELECT pur.shohin_id, c.client_id, c.name, e.image, e.shohin_mei, e.pv FROM purchase pur
                       JOIN customer c ON pur.client_id = c.client_id
                       JOIN eiga e ON pur.shohin_id = e.shohin_id
                       WHERE pur.client_id = ?');
@@ -39,6 +39,12 @@ foreach ($purchase as $item) {
     echo '<p>動画名: '.$item['shohin_mei'].'</p>';
     // 画像にリンクを設定する
     echo '<a href="'.$item['pv'].'"target="_blank">動画を見る</a>';
+    echo '<form action="review" method="get">'; // レビュー
+    echo '<div class="review"><p>';
+    echo '<input type="hidden" name="shohin_id" value="' . $item['shohin_id'] . '">';
+    echo '<input type="submit" value="レビューを見る">';
+    echo '</p></div>';
+    echo '</form>';
     echo '</li>';
     echo '</ul>';
     echo '</div>';
