@@ -42,29 +42,41 @@
     top: 350px; /* 上から10px */
     left: 580px; /* 左から20px */
 }
+.pasukaku{
+    position: absolute; /* 今の位置を基準 */
+    top: 399px; /* 上から10px */
+    left: 465px; /* 左から20px */
+}
+
+
+.pasutext_confirm{
+    position: absolute; /* 今の位置を基準 */
+    top: 399px; /* 上から10px */
+    left: 580px; /* 左から20px */
+}
 
 .kakusubmit{
     position: absolute; /* 今の位置を基準 */
-    top: 450px; /* 上から10px */
+    top: 600px; /* 上から10px */
     left: 700px; /* 左から20px */
 }
 
 .kupon{
     position: absolute; /* 今の位置を基準 */
-    top: 380px; /* 上から10px */
+    top: 430px; /* 上から10px */
     left: 450px; /* 左から20px */
     width: 150px;
 }
 
 .kuponlist{
     position: absolute; /* 今の位置を基準 */
-    top: 396px; /* 上から10px */
+    top: 445px; /* 上から10px */
     left: 620px; /* 左から20px */
      width: 250px;
 }
 .kuponno{
     position: absolute; /* 今の位置を基準 */
-    top:392px; /* 上から10px */
+    top:450px; /* 上から10px */
     left: 585px; /* 左から20px */
      width: 250px;
 }

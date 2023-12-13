@@ -108,7 +108,7 @@ $user_coupons = $sql_coupon->fetchAll(PDO::FETCH_ASSOC);
                 <tr><td><div class="meru">メールアドレス<div></td><td><input type="email" class="merutext" name="address" value="<?php echo $userinfo['address']; ?>"></td></tr>
                 <tr><td><div class="denha">電話番号<div></td><td><input type="text" class="denhatext" name="phone" value="<?php echo $userinfo['phone']; ?>"></td></tr>
                 <tr><td><div class="pasu">パスワード<div></td><td><input type="password" class="pasutext" name="password" value=""></td></tr>
-                <tr><td><div class="pasu">パスワード確認<div></td><td><input type="password" class="pasutext_confirm" name="password_confirm" value=""></td></tr>
+                <tr><td><div class="pasukaku">パスワード確認<div></td><td><input type="password" class="pasutext_confirm" name="password_confirm" value=""></td></tr>
             </table>
             <input type="submit" class="kakusubmit" value="確定">
         </form>
