@@ -11,12 +11,12 @@ if(!empty($_SESSION['movie'])){
         <?php
          echo '<td  width="500px"><img src="image/' . $product['image'] . '" alt="' . $product['name'] . '">';
         echo '<a href="detail.php?id=',$id,'">',$product['name'],'</a></td>';
-        echo '<td>',$product['price'],'</td>';
+        echo '<td>',number_format($product['price']),'円','</td>';
         $total+=$product['price'];
         echo '<td width="50px"><a href="cart-delete.php?id=',$id,'">削除</a></td>';
         echo '</tr>';
     }
-    echo '<tr><td>合計</td> <td></td> <td></td> <td>',$total,'</td></tr>';
+    echo '<tr><td>合計</td> <td></td> <td></td> <td>',number_format($total),'円','</td></tr>';
     echo '</table>';
     ?>
     </div>

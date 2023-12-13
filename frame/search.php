@@ -10,10 +10,15 @@ if(!isset($_SESSION['customer']['first_login'])){
     $stmt->execute([$_SESSION['customer']['client_id']]);
     $birthday_month=$stmt->fetch(PDO::FETCH_COLUMN);
     $month=date('n');
-    //最後の日付
+    $year=date('Y');
+    //最後の月
     $stmt = $pdo->prepare('SELECT MONTH(receive_day) FROM customer WHERE client_id=?');
     $stmt->execute([$_SESSION['customer']['client_id']]);
     $lastMonth=$stmt->fetch(PDO::FETCH_COLUMN);
+    //最後の年
+    $stmt = $pdo->prepare('SELECT YEAR(receive_day) FROM customer WHERE client_id=?');
+    $stmt->execute([$_SESSION['customer']['client_id']]);
+    $lastYear=$stmt->fetch(PDO::FETCH_COLUMN);
     if($month==$birthday_month){
         $coupon=1;
     }else{
@@ -21,7 +26,7 @@ if(!isset($_SESSION['customer']['first_login'])){
     }
     $last_day=date('Y-m-t H:i:s');
     $_SESSION['customer']['first_login']=true;
-    if($lastMonth!=$month){
+    if($lastMonth!=$month||$lastYear!=$year){
     //更新処理
     $sql=$pdo->prepare('UPDATE customer SET coupon_id=?,date_expiry=?,use_frag=0 WHERE client_id=?');
     $sql->execute([$coupon,$last_day,$_SESSION['customer']['client_id']]);

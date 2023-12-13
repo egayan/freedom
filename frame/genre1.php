@@ -13,7 +13,7 @@ $genres = $gstmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/genre.css">
+    <link rel="stylesheet" href="styles/genre.css?v=1.0.2">
 <title>ジャンル一覧</title>
 </head>
 <body>
@@ -24,15 +24,23 @@ foreach($genres as $genre){
     $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
     <h2><?php echo $genre['genre_name']; ?></h2>
-    <?php foreach($movies as $movie): ?>
+    <div class="Container">
+    <div class="Box-Container">
+    <?php foreach($movies as $movie): 
+        $img = $movie['image'];?>
         <a href="detail.php?id=<?php echo $movie['shohin_id']; ?>">
-        <img class="sum" src="image/<?php echo $movie['image']; ?>" alt="<?php echo $movie['shohin_mei'];?> ">
+        <div class="Box">
+        <img class="sum" src="image/<?php echo $img; ?>" alt="<?php echo $movie['shohin_mei'];?> ">
             </a>
+        </div>
+        <?php endforeach;?>
+        </div>
+    <div class="Arrow left"><</div>
+    <div class="Arrow right">></div>
     </div>
-        <?php endforeach; 
+        <?php
         }
         ?>    
-        <div class="Arrow left"><</div>
-        <div class="Arrow left">></div>
+<script src="js/genre.js"></script>
 </body>
 </html>

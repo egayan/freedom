@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         }
     }
     unset($_SESSION['movie']);
-    header('Location: my.php');
+    header('Location: library.php');
     exit;
 }
 $cart=$_SESSION['movie'];

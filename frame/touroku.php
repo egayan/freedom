@@ -26,32 +26,34 @@ $b=count($a);
 <div class="wrap">
     <form action="touroku.php" method="post">
 
-        <div class="namae">
+    <div class="namae">
     名前</div>
-    <input type="text" name="name" class="name">
+    <input type="text" name="name" class="name" value="<?= isset($_POST['name']) ? $_POST['name']:''; ?>">
     
 
     <div class="me-riadoresu">
     メールアドレス </div>
-    <input type="email" name="address" class="address">
+    <input type="email" name="address" class="address" value="<?= isset($_POST['address']) ? $_POST['address']:''; ?>">
 
     <div class="denwabangou">
     電話番号 </div>
-    <input type="tel" name="phone" class="phone">
+    <input type="tel" name="phone" class="phone" value="<?= isset($_POST['phone']) ? $_POST['phone']:''; ?>">
 
     <div class="pasuwa-do">
     パスワード</div>
-    <input type="password" name="password" class="password">
+    <input type="password" name="password" class="password" value="<?= isset($_POST['password']) ? $_POST['password']:''; ?>">
     
+    <div class="pasuwa-do">
+    パスワード確認</div>
+    <input type="password" name="password_confirm" class="password_confirm" value="<?= isset($_POST['password_confirm']) ? $_POST['password_confirm']:''; ?>">
 
     <div class="seinegappi">
     生年月日 </div>
-    <input type="date" name="birthday"  class="birthday"> 
+    <input type="date" name="birthday"  class="birthday" value="<?= isset($_POST['birthday']) ? $_POST['birthday']:''; ?>"> 
  
 
     <div class="ganru">
     好きなジャンル</div>
-
     <div class="kategori">
     <?php
     for($i = 0; $i<$b ; $i++){
@@ -70,6 +72,7 @@ $b=count($a);
         $address=$_POST['address'];
         $phone=$_POST['phone'];
         $password=$_POST['password'];
+        $password_confirm=$_POST['password_confirm'];
         $birthday=$_POST['birthday'];
         if(isset($_POST['genre'])){
             $genre=$_POST['genre'];
@@ -77,8 +80,6 @@ $b=count($a);
             $genre=[];
         }
         
-    
-    //<p>14から31は文字を赤でお願い</p>
     echo'<div class="red">';
     if(empty($name)){
         echo '<div class="error1">';
@@ -100,23 +101,30 @@ $b=count($a);
             $flag=1;
         }
     }
-            if(empty($phone)){
-                echo '<div class="error3">';
-                echo '<p>','電話番号は必須項目です','</p>';
-                echo '</div>';        
-            }elseif (!preg_match("/^\d{10,11}$/", $phone)) {
-                echo '<div class="error9">';
-                echo '電話番号は10桁または11桁の数字で入力してください';
-                echo '</div>'; 
-                $flag=1;
-            }
-                
-    
+
+    if(empty($phone)){
+        echo '<div class="error3">';
+        echo '<p>','電話番号は必須項目です','</p>';
+        echo '</div>';        
+    }elseif (!preg_match("/^\d{10,11}$/", $phone)) {
+        echo '<div class="error9">';
+        echo '電話番号は10桁または11桁の数字で入力してください';
+        echo '</div>'; 
+        $flag=1;
+    }
+        
+    //1213
     if(empty($password)){
         echo '<div class="error4">';
         echo '<p>','パスワードは必須項目です','</p>';
         echo '</div>';
+    }else if($password!=$password_confirm){
+        echo '<div class="error10">';
+        echo 'パスワードが一致しません';
+        echo '</div>'; 
+        $flag=1;
     }
+
     if(empty($birthday)){
         echo '<p class="error5">','生年月日は必須項目です','</p>';
     }
