@@ -61,7 +61,7 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="style/p.css" rel="stylesheet"> -->
+    <link href="styles/p.css" rel="stylesheet"> 
     <title>購入画面</title>
 </head>
 <body>
@@ -70,6 +70,7 @@ $coupons=$stmt->fetchAll(PDO::FETCH_ASSOC);
     <form action="cart-insert.php" method="get">
         <div class="rog">
         <button type="submit">ひとつ前に戻る</button><div>
+    </form>
         <tr>
             <th>商品名</th><th>クーポン</th><th>金額</th>
         </tr>

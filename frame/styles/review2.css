@@ -1,0 +1,88 @@
+h1{
+    position: relative; /* 今の位置を基準 */
+    top: -220px; /* 上から10px */
+    left: 400px;
+    display: inline-block;
+    padding:10px 100px; /* 枠と文字の空間 */
+    border: solid 2px #454545;
+}
+img{
+    width: 160px;
+    height: 160px;
+}
+.rect{
+    position: relative; /* 今の位置を基準 */
+    top: -50px; /* 上から10px */
+    left: -175px;
+    display: inline-block;
+    padding:10px 100px; /* 枠と文字の空間 */
+    font-size:  20px;
+}
+.rect2 select{
+    position: relative; /* 今の位置を基準 */
+    top: -120px; /* 上から10px */
+    left: 390px;
+    width: 55px;
+    height: 28px;
+    font-size:  18px;
+}
+.w{
+    position: relative; /* 今の位置を基準 */
+    top: -148px; /* 上から10px */
+    left: 450px;
+    width: 55px;
+    height: 28px;
+    font-size:  18px;
+}
+.na{
+    position: relative; /* 今の位置を基準 */
+    top: -176px; /* 上から10px */
+    left: 510px;
+    width: 55px;
+    height: 28px;
+    font-size:  20px;
+}.na1{
+    position: relative; /* 今の位置を基準 */
+    top: -203px; /* 上から10px */
+    left: 596px;
+    width: 250px;
+    height: 20px;
+    font-size:  18px;
+}.mi{
+    position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: -175px; /* ä¸Šã‹ã‚‰10px */
+    left: 322px;
+    width: 250px;
+    height: 20px;
+    font-size:  20px;
+}.mi1{
+    position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: -195px; /* ä¸Šã‹ã‚‰10px */
+    left: 400px;
+    width: 445px;
+    height: 20px;
+    font-size:  18px;
+}.s{
+    position: relative; 
+    top: -175px; /* ä¸Šã‹ã‚‰10px */
+    left: 322px;
+    width: 250px;
+    height: 20px;
+    font-size:  20px;
+}.s1{
+    resize: none;
+    position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: -165px; /* ä¸Šã‹ã‚‰10px */
+    left: 322px;
+    width: 525px;
+    height: 150px;
+    font-size:  15px;
+}.to{
+    resize: none;
+    position: relative; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: -165px; /* ä¸Šã‹ã‚‰10px */
+    left: 718px;
+    width: 525px;
+    height: 150px;
+    font-size:  15px;
+}

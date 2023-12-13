@@ -1,0 +1,217 @@
+.red{
+    font-size: 15px;  
+    color: #f32121;     /* æ–‡å­—è‰²æŒ‡å®š */
+}
+
+.namae{/*åå‰*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 10px;/* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
+}
+.name{/*åå‰text*/
+    position: absolute; 
+    top: 30px;
+    left: 500px; 
+     width: 6em;
+      width: 300px;
+}
+
+
+.me-riadoresu{/* ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 70px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+}
+.address{/* ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ email */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 90px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+     width: 6em;
+      width: 300px;
+}
+
+
+.denwabangou{/* é›»è©±ç•ªå· */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 130px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
+}
+.phone{/* é›»è©±ç•ªå· tel*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 150px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    width: 6em;
+      width: 300px;
+}
+
+.pasuwa-do{/* ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 190px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
+}
+.password{/* ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ password*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 210px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    line-height: 1.5;
+    width: 6em;
+    width: 300px;
+}
+
+
+.seinegappi{/*ç”Ÿå¹´æœˆæ—¥ */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 250px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
+}
+.birthday{/* ç”Ÿå¹´æœˆæ—¥ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 270px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+   width: 6em;
+    width: 300px;
+}
+
+
+.ganru{/*ç”Ÿå¹´æœˆæ—¥ */
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 310px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
+}
+.zyanru{/* ç”Ÿå¹´æœˆæ—¥ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 0px; /* ä¸Šã‹ã‚‰10px */
+    left: 0px; /* å·¦ã‹ã‚‰20px */
+     width: 6em;
+    width: 300px;
+}
+.kategori{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 350px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+}
+
+.zyanru6{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 0px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+    width: 100px;
+   
+}
+.zyanru7{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position:absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 100px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+     width: 100px;
+}
+.zyanru8{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 25px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+      width: 100px;
+   
+}
+.zyanru9{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 50px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+      width: 100px;
+   
+}
+.zyanru10{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 75px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+     width: 100px;
+   
+}
+.zyanru11{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 120px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+     width: 100px;
+   
+}
+.zyanru12{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 145px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; 
+     width: 100px;
+}
+.zyanru13{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position:  absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 167px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px; /* å·¦ã‹ã‚‰20px */
+     width: 150px;
+   
+}
+.zyanru14{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
+    position:  absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 194px; /* ä¸Šã‹ã‚‰10px */
+    left: 200px;
+     width: 100px;
+}
+
+.error1{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: -6px; /* ä¸Šã‹ã‚‰10px */
+    left: 675px; /* å·¦ã‹ã‚‰20px */
+    width: 300px;
+}
+.error2{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 56px; /* ä¸Šã‹ã‚‰10px */
+    left: 630px; /* å·¦ã‹ã‚‰20px */
+    
+}
+.error3{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 115px; /* ä¸Šã‹ã‚‰10px */
+    left: 645px; /* å·¦ã‹ã‚‰20px */
+   
+}
+.error4{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 175px; /* ä¸Šã‹ã‚‰10px */
+    left: 625px; /* å·¦ã‹ã‚‰20px */
+}
+.error5{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 235px; /* ä¸Šã‹ã‚‰10px */
+    left: 640px; /* å·¦ã‹ã‚‰20px */
+}
+.error6{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 295px; /* ä¸Šã‹ã‚‰10px */
+    left: 630px; /* å·¦ã‹ã‚‰20px */
+}
+.error7{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 295px; /* ä¸Šã‹ã‚‰10px */
+    left: 630px; /* å·¦ã‹ã‚‰20px */
+}
+.error8{/* エラー文 birthday*/
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 69px; /* ä¸Šã‹ã‚‰10px */
+    left: 630px; /* å·¦ã‹ã‚‰20px */
+}
+.error9{
+   position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 129px; /* ä¸Šã‹ã‚‰10px */
+    left: 570px; /* å·¦ã‹ã‚‰20px */
+}
+.sousinn{
+    position:  absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 600px; /* ä¸Šã‹ã‚‰10px */
+    left: 700px; /* å·¦ã‹ã‚‰20px */
+}
+.rog{
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 600px; /* ä¸Šã‹ã‚‰10px */
+    left: 950px; /* å·¦ã‹ã‚‰20px */
+}

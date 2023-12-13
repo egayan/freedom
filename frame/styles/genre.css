@@ -59,7 +59,3 @@
 .Hide {
   display: none;
 }
-.Box-Container {
-  overflow-x: auto;
-  white-space: nowrap;
-}

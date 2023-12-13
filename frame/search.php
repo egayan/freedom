@@ -85,7 +85,7 @@ $customer_genre = $sql_genre->fetch(PDO::FETCH_COLUMN);
    
     }
     foreach($sql as $row){
-        echo '<br><a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'],"<div>";
+        echo '<div class="gazouname',$i,'"><br><a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'],"</div>";
         echo '<div class="gazou',$i,'"><img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'"class="san">'.'</a>';
         $i++; 
     }

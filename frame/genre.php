@@ -13,7 +13,7 @@ $genres = $gstmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/genre.css?v=1.0.2">
+    <link rel="stylesheet" href="styles/genre.css?v=1.0.5">
 <title>ジャンル一覧</title>
 </head>
 <body>

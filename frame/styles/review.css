@@ -4,16 +4,14 @@ img{
 }
 .review{
     border: 4px solid;
-    margin: 10px;
+    margin: 15px;
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
-.review2{
+.submit{
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    left: 600px;
+    left: 500px;
     bottom: 1200px;
 }
 .review1{
