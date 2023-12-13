@@ -5,6 +5,8 @@ ob_start();
 require 'header.php';
 require 'menu.php';
 $pdo = new PDO($connect, USER, PASS);
+$error1='電話番号は10桁または11桁の数字で入力してください。';
+$error2='パスワードが一致しません';
 // ログアウトが押された場合
 if (isset($_GET['logout'])) {
     session_unset();
@@ -19,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $address=$_POST['address'];
     $phone=$_POST['phone'];
     $password=$_POST['password'];
-
+    $password_confirm=$_POST['password_confirm'];
     // アドレスのチェック
     if(isset($_SESSION['customer']['client_id'])){
         $id=$_SESSION['customer']['client_id'];
@@ -27,7 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id=null;
     }
     if(!preg_match("/^\d{10,11}$/", $phone)){
-        echo '電話番号は10桁または11桁の数字で入力してください。';
+        header('Location: my.php?error=1');
+        exit;
+    }
+    if($password!=$password_confirm){
+        header('Location: my.php?error=2');
         exit;
     }
     $stmt=$pdo->prepare('SELECT * FROM customer WHERE address = ?');
@@ -87,12 +93,22 @@ $user_coupons = $sql_coupon->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="wrap">
-        <form action="" method="post">
+    <?php    
+    $error=$_GET['error'] ?? null;
+    // エラーメッセージの表示
+    if ($error==1) {
+        echo '<p class="error-message">電話番号は10桁または11桁の数字で入力してください。</p>';
+    } else if($error==2) {
+        echo '<p class="error-message">パスワードが一致しません。</p>';
+    }
+    ?>
+        <form action="my.php" method="post">
             <table>
                 <tr><td><div class="name">お名前<div></td><td><input type="text" class="nametext" name="name" value="<?php echo $userinfo['name']; ?>"></td></tr>
                 <tr><td><div class="meru">メールアドレス<div></td><td><input type="email" class="merutext" name="address" value="<?php echo $userinfo['address']; ?>"></td></tr>
                 <tr><td><div class="denha">電話番号<div></td><td><input type="text" class="denhatext" name="phone" value="<?php echo $userinfo['phone']; ?>"></td></tr>
                 <tr><td><div class="pasu">パスワード<div></td><td><input type="password" class="pasutext" name="password" value=""></td></tr>
+                <tr><td><div class="pasu">パスワード確認<div></td><td><input type="password" class="pasutext_confirm" name="password_confirm" value=""></td></tr>
             </table>
             <input type="submit" class="kakusubmit" value="確定">
         </form>

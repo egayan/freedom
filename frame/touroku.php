@@ -155,8 +155,6 @@ $b=count($a);
 }
 ob_end_flush();
 ?>
-
-
     <form action="login.php" method="get">
         <div class="rog">
         <button type="submit">ログイン画面へ戻る</button><div>
