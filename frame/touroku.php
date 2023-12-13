@@ -43,7 +43,7 @@ $b=count($a);
     パスワード</div>
     <input type="password" name="password" class="password" value="<?= isset($_POST['password']) ? $_POST['password']:''; ?>">
     
-    <div class="pasuwa-do">
+    <div class="pasuwa-dokaku">
     パスワード確認</div>
     <input type="password" name="password_confirm" class="password_confirm" value="<?= isset($_POST['password_confirm']) ? $_POST['password_confirm']:''; ?>">
 
