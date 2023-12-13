@@ -60,17 +60,31 @@
     width: 6em;
     width: 300px;
 }
+.pasuwa-dokaku{
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 255px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px; /* å·¦ã‹ã‚‰20px */
+    font-size: 15px; 
+}
+    
+.password_confirm{
+     position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+    top: 275px; /* ä¸Šã‹ã‚‰10px */
+    left: 500px;
+     width: 6em;
+    width: 300px;
+}
 
 
 .seinegappi{/*ç”Ÿå¹´æœˆæ—¥ */
     position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
-    top: 250px; /* ä¸Šã‹ã‚‰10px */
+    top: 315px; /* ä¸Šã‹ã‚‰10px */
     left: 500px; /* å·¦ã‹ã‚‰20px */
     /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
 }
 .birthday{/* ç”Ÿå¹´æœˆæ—¥ birthday*/
     position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
-    top: 270px; /* ä¸Šã‹ã‚‰10px */
+    top: 335px; /* ä¸Šã‹ã‚‰10px */
     left: 500px; /* å·¦ã‹ã‚‰20px */
    width: 6em;
     width: 300px;
@@ -79,7 +93,7 @@
 
 .ganru{/*ç”Ÿå¹´æœˆæ—¥ */
     position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
-    top: 310px; /* ä¸Šã‹ã‚‰10px */
+    top: 380px; /* ä¸Šã‹ã‚‰10px */
     left: 500px; /* å·¦ã‹ã‚‰20px */
     /*font-size: 40px;  ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºèª¿æ•´*/
 }
@@ -92,7 +106,7 @@
 }
 .kategori{/* ã‚¸ãƒ£ãƒ³ãƒ« birthday*/
     position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
-    top: 350px; /* ä¸Šã‹ã‚‰10px */
+    top: 405px; /* ä¸Šã‹ã‚‰10px */
     left: 500px; /* å·¦ã‹ã‚‰20px */
 }
 
@@ -182,17 +196,17 @@
 }
 .error5{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
     position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
-    top: 235px; /* ä¸Šã‹ã‚‰10px */
+    top: 300px; /* ä¸Šã‹ã‚‰10px */
     left: 640px; /* å·¦ã‹ã‚‰20px */
 }
 .error6{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
     position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
-    top: 295px; /* ä¸Šã‹ã‚‰10px */
+    top: 365px; /* ä¸Šã‹ã‚‰10px */
     left: 630px; /* å·¦ã‹ã‚‰20px */
 }
 .error7{/* ã‚¨ãƒ©ãƒ¼æ–‡ birthday*/
     position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
-    top: 295px; /* ä¸Šã‹ã‚‰10px */
+    top: 365px; /* ä¸Šã‹ã‚‰10px */
     left: 630px; /* å·¦ã‹ã‚‰20px */
 }
 .error8{/* エラー文 birthday*/
@@ -205,13 +219,20 @@
     top: 129px; /* ä¸Šã‹ã‚‰10px */
     left: 570px; /* å·¦ã‹ã‚‰20px */
 }
+.error10{
+    position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
+     top: 255px; /* ä¸Šã‹ã‚‰10px */
+     left: 630px; /* å·¦ã‹ã‚‰20px */
+ }
 .sousinn{
     position:  absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
-    top: 600px; /* ä¸Šã‹ã‚‰10px */
-    left: 700px; /* å·¦ã‹ã‚‰20px */
+    top: 650px; /* ä¸Šã‹ã‚‰10px */
+    left: 620px; /* å·¦ã‹ã‚‰20px */
+    
 }
 .rog{
     position: absolute; /* ä»Šã®ä½ç½®ã‚’åŸºæº– */
-    top: 600px; /* ä¸Šã‹ã‚‰10px */
+    top: 650px; /* ä¸Šã‹ã‚‰10px */
     left: 950px; /* å·¦ã‹ã‚‰20px */
+    height: 50px;
 }
