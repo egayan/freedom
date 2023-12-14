@@ -9,7 +9,7 @@ if(!empty($_SESSION['movie'])){
         echo '<tr>';
         ?>
         <?php
-         echo '<td  width="500px"><img src="image/' . $product['image'] . '" alt="' . $product['name'] . '">';
+        echo '<td  width="500px"><img src="image/' . $product['image'] . '" alt="' . $product['name'] . '">';
         echo '<a href="detail.php?id=',$id,'">',$product['name'],'</a></td>';
         echo '<td>',number_format($product['price']),'円','</td>';
         $total+=$product['price'];
