@@ -13,6 +13,18 @@ $movie = $stmt->fetch(PDO::FETCH_ASSOC);
 $stmt = $pdo->prepare("SELECT COUNT(*) FROM purchase WHERE shohin_id = ? AND client_id = ?");
 $stmt->execute([$move_id, $customer_id]);
 $purchase = $stmt->fetchColumn();
+
+// レビュー済みかどうかの判定
+$stm=$pdo->prepare("SELECT COUNT(*) FROM review WHERE shohin_id = ?");
+$stm->execute([$move_id]);
+$rankcount = $stm->fetchColumn();
+$avgrank=0;
+if($rankcount>0){
+//平均評価
+$avg=$pdo->prepare("SELECT AVG(star) as average FROM review WHERE shohin_id = ?");
+$avg->execute([$move_id]);
+$avg=$avg->fetch(PDO::FETCH_ASSOC)['average'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +42,12 @@ $purchase = $stmt->fetchColumn();
         <div class="ryoukin"><?php echo "料金：",$movie['price'],"円"; ?> </div>
         <div class="zikan"><?php echo $movie['time']; ?> </div>	
         <div class="mozi"><?php echo $movie['explanation']; ?> </div>
+
+        <?php if($rankcount>0):?>
+        <p>平均評価: <?php echo number_format($avg, 1); ?> / 5</p>
+        <?php else: ?>
+            <p>レビューはまだありません</p>
+        <?php endif;?>
         <?php
         if($purchase===0){
             echo '<form action="cart-insert.php" method="post">';

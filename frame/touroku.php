@@ -149,6 +149,12 @@ $b=count($a);
             $stmt=$pdo->prepare("INSERT INTO customer_genre(client_id, genre_id)SELECT ?,genre_id FROM genre WHERE genre_name=?");
             $stmt->execute([$id,$c]);
         }
+        // 一か月前の日付を計算
+        $first=date('Y-m-d H:i:s',strtotime('-1 month'));
+
+        // 新規ユーザーのreceive_dayに一か月前の日付を設定
+        $stmt=$pdo->prepare("UPDATE customer SET receive_day=? WHERE client_id=?");
+        $stmt->execute([$first,$id]);
         header('Location: login.php');
         exit;
     }

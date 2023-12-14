@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'name' => $name,
                 'address' => $address,
                 'phone' => $phone,
-                'password' => $password,
+                'password' => $password
             ];
             echo 'お客様情報を更新しました。';
         }

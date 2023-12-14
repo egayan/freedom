@@ -45,15 +45,16 @@ $total_pages=ceil($total_reviews/10);
 </div>
 </form>
 <div class="review1">
-<h1>レビュー</h1>
+<h1><?php echo $movie['shohin_mei'];?>レビュー</h1>
 </div>
+<?php echo '<img src="image/'.$movie['image'].'" alt="'.$movie['shohin_mei'].'">';?> <br>
  <?php if(count($reviews)>0):?>
     <?php foreach($reviews as $review):?>
         <div class="review">
-                評価(☆): <?php echo $review['star']; ?>/5
-                投稿者: <?php echo $review['name']; ?>
-                <p>レビュー: <?php echo $review['comment']; ?></p>
-            </div>
+            評価(☆):<?php echo str_repeat('★',$review['star']); ?><?php echo str_repeat('☆',5-$review['star']); ?>
+            投稿者: <?php echo $review['name']; ?>
+            <p>レビュー: <?php echo $review['comment']; ?></p>
+        </div>
         <?php endforeach; ?>
     <?php else: ?>
         <p>この商品にはまだレビューがありません。</p>

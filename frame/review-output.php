@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require 'db-conect.php';
 require 'header.php';
 require 'menu.php';
@@ -9,12 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $client_id = $_SESSION['customer']['client_id'];
     $star=$_POST['star'];
     $comment = $_POST['comment'];
-
     $pdo = new PDO($connect, USER, PASS);
     $stmt = $pdo->prepare('INSERT INTO review (shohin_id,client_id, star, comment) VALUES (?, ?, ?, ?)');
     $stmt->execute([$shohin_id, $client_id, $star,$comment]);
-
-    // 投稿完了後、商品詳細ページに戻る
+    // // 投稿完了後、商品詳細ページに戻る
     header('Location: detail.php?id=' . $shohin_id);
     exit;
 }
@@ -26,17 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/review-output.css" rel="stylesheet">
     <title>レビュー投稿</title>
-<body>
-</div>
+    </head>
+    <body>
 <form action="review.php" method="get">
         <div class="rog">
+        <input type="hidden" name="shohin_id" value="<?php echo $_GET['shohin_id']; ?>">
         <button type="submit">ひとつ前に戻る</button><div>
-</head>
-<body>
+</form>
     <div class="review">
     <h1>レビュー投稿</h1>
     </div>
-    <form action="review-output.php" method="post">
+    <form action="" method="post">
         <input type="hidden" name="shohin_id" value="<?php echo $_GET['shohin_id']; ?>">
         <div class="review1">
         <label for="star">評価（星）:</label>
@@ -58,3 +57,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 </body>
 </html>
+<?php ob_end_flush();?>

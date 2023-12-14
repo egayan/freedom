@@ -75,16 +75,9 @@ $customer_genre = $sql_genre->fetch(PDO::FETCH_COLUMN);
                             ORDER BY RAND()
                             LIMIT 4');
     $sql_search->execute([$_SESSION['customer']['client_id'], "%$customer_genre%"]);
-    
     $i=1;
      echo '<div class="osusume"><font size=40><b>あなたへのおすすめ</b></font><div>';
     foreach($sql_search as $row){
-    $a=$_SESSION['customer']['genre'];
-    $sql=$pdo->prepare('select * from eiga where genre LIKE ? ORDER BY RAND() LIMIT 4');
-    $sql->execute(["%$a%"]);
-   
-    }
-    foreach($sql as $row){
         echo '<div class="gazouname',$i,'"><br><a href="detail.php?id=',$row['shohin_id'],'">',$row['shohin_mei'],"</div>";
         echo '<div class="gazou',$i,'"><img src="image/'.$row['image'].'" alt="'.$row['shohin_mei'].'"class="san">'.'</a>';
         $i++; 
